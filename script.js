@@ -1,87 +1,38 @@
-// Navigation scroll effect
+// Nav scroll
 const nav = document.querySelector('.nav');
-window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
 
-// Mobile menu toggle
+// Mobile menu
 const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => {
-    links.classList.toggle('active');
-});
-
-// Close mobile menu on link click
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => links.classList.remove('active'));
-});
+if (toggle) toggle.addEventListener('click', () => links.classList.toggle('active'));
+document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => links.classList.remove('active')));
 
 // Scroll animations
-const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
-
-sections.forEach(section => observer.observe(section));
+document.querySelectorAll('.section').forEach(s => observer.observe(s));
 
 // Portfolio filter
-const filterBtns = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-filterBtns.forEach(btn => {
+document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-        portfolioItems.forEach(item => {
-            if (filter === 'all' || item.dataset.category === filter) {
-                item.style.display = 'block';
-                item.style.animation = 'fadeIn 0.4s ease';
-            } else {
-                item.style.display = 'none';
-            }
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.style.display = (f === 'all' || item.dataset.category === f) ? 'block' : 'none';
         });
     });
 });
 
-// Skill bars animation
-const skillBars = document.querySelectorAll('.fill');
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.style.width;
-        }
-    });
-}, { threshold: 0.5 });
-
-skillBars.forEach(bar => {
-    const width = bar.style.width;
-    bar.style.width = '0%';
-    skillObserver.observe(bar);
-    
-    const barObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                setTimeout(() => { bar.style.width = width; }, 200);
-                barObserver.unobserve(bar);
-            }
-        });
-    }, { threshold: 0.5 });
-    barObserver.observe(bar);
+// Skill bars
+document.querySelectorAll('.fill').forEach(bar => {
+    const w = bar.style.width; bar.style.width = '0%';
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) { bar.style.width = w; } }, { threshold: 0.5 }).observe(bar);
 });
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => { e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }); });
 });
