@@ -11,7 +11,7 @@ if (cursor && window.innerWidth > 768) {
         cursor.style.top = e.clientY - 10 + 'px';
     });
     document.querySelectorAll('a, button, .work-card, summary').forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
+        el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(1.8)');
         el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
     });
 }
