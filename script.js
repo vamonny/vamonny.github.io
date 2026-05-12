@@ -1,6 +1,19 @@
+﻿// Custom cursor
+const cursor = document.querySelector('.cursor');
+if (cursor && window.innerWidth > 768) {
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX - 10 + 'px';
+        cursor.style.top = e.clientY - 10 + 'px';
+    });
+    document.querySelectorAll('a, button, .work-card').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2)');
+        el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+    });
+}
+
 // Nav scroll
 const nav = document.querySelector('.nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 80));
 
 // Mobile menu
 const toggle = document.querySelector('.nav-toggle');
@@ -10,29 +23,26 @@ document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click
 
 // Scroll animations
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.section').forEach(s => observer.observe(s));
-
-// Portfolio filter
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.style.display = (f === 'all' || item.dataset.category === f) ? 'block' : 'none';
-        });
+    entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('visible'), i * 100);
+        }
     });
-});
+}, { threshold: 0.1 });
 
-// Skill bars
-document.querySelectorAll('.fill').forEach(bar => {
-    const w = bar.style.width; bar.style.width = '0%';
-    new IntersectionObserver(([e]) => { if (e.isIntersecting) { bar.style.width = w; } }, { threshold: 0.5 }).observe(bar);
-});
+document.querySelectorAll('.section, .service-row').forEach(s => observer.observe(s));
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => { e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }); });
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+// Parallax hero title on scroll
+window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.hero-title');
+    if (hero) hero.style.transform = `translateY(${window.scrollY * 0.15}px)`;
 });

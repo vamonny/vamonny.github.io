@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -7,185 +7,149 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="cursor"></div>
+    <div class="grain"></div>
+
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">KK</a>
+            <a href="index.html" class="nav-logo">K<span class="accent">.</span></a>
             <ul class="nav-links">
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#services">Услуги</a></li>
-                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#portfolio">Работы</a></li>
                 <li><a href="#skills">Навыки</a></li>
-                <li><a href="#contact" class="nav-cta">Связаться</a></li>
+                <li><a href="#contact" class="nav-cta">Написать</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">Графический дизайнер</div>
-            <h1 class="hero-title">Кирилл<br><span class="accent">Ковалев</span></h1>
-            <p class="hero-desc">Создаю визуальные решения, которые работают на ваш бизнес. Логотипы, фирменный стиль, инфографика и 3D анимация.</p>
+            <div class="hero-line"></div>
+            <p class="hero-intro">Графический дизайнер из Нижнего Новгорода</p>
+            <h1 class="hero-title">Создаю<br><span class="accent">визуальные</span><br>решения</h1>
+            <p class="hero-desc">Логотипы, фирменный стиль, инфографика для маркетплейсов и 3D анимация упаковки. Минимализм и внимание к деталям.</p>
             <div class="hero-actions">
-                <a href="#portfolio" class="btn btn-primary">Смотреть работы</a>
-                <a href="#contact" class="btn btn-outline">Обсудить проект</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Проектов</span></div>
-                <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Клиентов</span></div>
-                <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Года опыта</span></div>
+                <a href="#portfolio" class="btn btn-primary"><span>Портфолио</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+                <a href="#contact" class="btn btn-ghost">Обсудить проект</a>
             </div>
         </div>
-        <div class="hero-visual"><div class="hero-shape"></div><div class="hero-shape s2"></div></div>
+        <div class="hero-scroll">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <!-- About -->
+    <section class="marquee-section">
+        <div class="marquee"><div class="marquee-inner">
+            <span>ЛОГОТИПЫ</span><span>•</span><span>БРЕНДИНГ</span><span>•</span><span>ИНФОГРАФИКА</span><span>•</span><span>3D АНИМАЦИЯ</span><span>•</span>
+            <span>ЛОГОТИПЫ</span><span>•</span><span>БРЕНДИНГ</span><span>•</span><span>ИНФОГРАФИКА</span><span>•</span><span>3D АНИМАЦИЯ</span><span>•</span>
+        </div></div>
+    </section>
+
     <section id="about" class="section">
         <div class="container">
-            <div class="section-header"><span class="tag">01</span><h2>Обо мне</h2></div>
+            <div class="section-header"><span class="section-num">01</span><h2>Обо мне</h2></div>
             <div class="about-grid">
                 <div class="about-text">
-                    <p class="lead">Привет! Я Кирилл — графический дизайнер из Нижнего Новгорода. Специализируюсь на минималистичных и функциональных визуальных решениях.</p>
-                    <p>Работаю с бизнесом и стартапами, помогая им выделиться через качественный дизайн. Мой подход — минимализм, чистота линий и внимание к деталям.</p>
+                    <p class="lead">Я верю, что хороший дизайн — это не украшение, а инструмент. Каждый проект начинается с понимания задачи бизнеса.</p>
+                    <p>Работаю с компаниями и стартапами, создавая визуальную идентичность, которая запоминается и конвертирует. Мой стиль — чистый минимализм с вниманием к каждому пикселю.</p>
                 </div>
                 <div class="about-details">
-                    <div class="detail"><span class="detail-label">Локация</span><span>Нижний Новгород</span></div>
-                    <div class="detail"><span class="detail-label">Стиль</span><span>Минимализм</span></div>
-                    <div class="detail"><span class="detail-label">Опыт</span><span>2+ года</span></div>
-                    <div class="detail"><span class="detail-label">Статус</span><span class="accent">Открыт к заказам</span></div>
+                    <div class="detail-card"><span class="detail-num">2+</span><span class="detail-text">года в дизайне</span></div>
+                    <div class="detail-card"><span class="detail-num">20+</span><span class="detail-text">завершённых проектов</span></div>
+                    <div class="detail-card"><span class="detail-num">15+</span><span class="detail-text">довольных клиентов</span></div>
+                    <div class="detail-card highlight"><span class="detail-num">∞</span><span class="detail-text">стремление к идеалу</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
     <section id="services" class="section">
         <div class="container">
-            <div class="section-header"><span class="tag">02</span><h2>Услуги</h2></div>
-            <div class="services-grid">
-                <div class="service-card"><div class="service-icon">◆</div><h3>Логотипы</h3><p>Разработка уникальных логотипов для бизнеса, стартапов и личных брендов.</p><span class="price">от 3,000 ₽</span></div>
-                <div class="service-card"><div class="service-icon">◈</div><h3>Фирменный стиль</h3><p>Комплексная визуальная идентичность: логотип, цвета, типографика, брендбук.</p><span class="price">от 10,000 ₽</span></div>
-                <div class="service-card"><div class="service-icon">▣</div><h3>Инфографика</h3><p>Карточки товаров для Wildberries и Ozon. Визуализация данных для презентаций.</p><span class="price">от 2,000 ₽</span></div>
-                <div class="service-card"><div class="service-icon">⬡</div><h3>3D анимация</h3><p>Реалистичная 3D визуализация и анимация упаковки для рекламы и маркетплейсов.</p><span class="price">от 5,000 ₽</span></div>
+            <div class="section-header"><span class="section-num">02</span><h2>Услуги</h2></div>
+            <div class="services-list">
+                <div class="service-row"><div class="service-number">01</div><div class="service-info"><h3>Логотипы</h3><p>Уникальные логотипы для бизнеса и личных брендов. От концепции до финальных файлов во всех форматах.</p></div><div class="service-price">от 3,000 ₽</div></div>
+                <div class="service-row"><div class="service-number">02</div><div class="service-info"><h3>Фирменный стиль</h3><p>Полная визуальная идентичность: логотип, палитра, типографика, носители, брендбук.</p></div><div class="service-price">от 10,000 ₽</div></div>
+                <div class="service-row"><div class="service-number">03</div><div class="service-info"><h3>Инфографика WB/Ozon</h3><p>Карточки товаров, которые продают. Визуализация характеристик и преимуществ продукта.</p></div><div class="service-price">от 2,000 ₽</div></div>
+                <div class="service-row"><div class="service-number">04</div><div class="service-info"><h3>3D анимация упаковки</h3><p>Реалистичная визуализация и анимация продукта в Blender для рекламы и маркетплейсов.</p></div><div class="service-price">от 5,000 ₽</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio -->
     <section id="portfolio" class="section">
         <div class="container">
-            <div class="section-header"><span class="tag">03</span><h2>Портфолио</h2></div>
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">Все</button>
-                <button class="filter-btn" data-filter="logo">Логотипы</button>
-                <button class="filter-btn" data-filter="brand">Брендинг</button>
-                <button class="filter-btn" data-filter="infographic">Инфографика</button>
-                <button class="filter-btn" data-filter="3d">3D</button>
-            </div>
+            <div class="section-header"><span class="section-num">03</span><h2>Работы</h2></div>
             <div class="portfolio-grid">
-                <a href="projects/logofolio.html" class="portfolio-item" data-category="logo">
-                    <div class="portfolio-card">
-                        <img src="img/logofolio/1.png" alt="Логофолио" loading="lazy">
-                        <div class="portfolio-overlay"><h4>Логофолио</h4><p>Коллекция из 9 логотипов</p></div>
-                    </div>
+                <a href="projects/logofolio.html" class="work-card large" data-category="logo">
+                    <img src="img/logofolio/1.png" alt="Логофолио" loading="lazy">
+                    <div class="work-info"><span class="work-tag">Логотипы</span><h3>Логофолио</h3><p>Коллекция из 9 логотипов →</p></div>
                 </a>
-                <a href="projects/pafos.html" class="portfolio-item" data-category="brand">
-                    <div class="portfolio-card">
-                        <img src="img/pafos/1.png" alt="Пафос — брендинг" loading="lazy">
-                        <div class="portfolio-overlay"><h4>Пафос</h4><p>Брендинг стрип-клуба</p></div>
-                    </div>
+                <a href="projects/pafos.html" class="work-card" data-category="brand">
+                    <img src="img/pafos/1.png" alt="Пафос" loading="lazy">
+                    <div class="work-info"><span class="work-tag">Брендинг</span><h3>Пафос</h3><p>Стрип-клуб →</p></div>
                 </a>
-                <a href="projects/infographic.html" class="portfolio-item" data-category="infographic">
-                    <div class="portfolio-card">
-                        <img src="img/infographic/Dyson1.png" alt="Инфографика Dyson" loading="lazy">
-                        <div class="portfolio-overlay"><h4>Инфографика WB</h4><p>Карточки товаров для маркетплейсов</p></div>
-                    </div>
+                <a href="projects/infographic.html" class="work-card" data-category="infographic">
+                    <img src="img/infographic/Dyson1.png" alt="Инфографика" loading="lazy">
+                    <div class="work-info"><span class="work-tag">Инфографика</span><h3>Карточки WB</h3><p>Dyson, iPhone →</p></div>
                 </a>
-                <a href="projects/3d.html" class="portfolio-item" data-category="3d">
-                    <div class="portfolio-card">
-                        <div class="portfolio-placeholder video-placeholder"><span>▶ 3D Анимация</span><small>Упаковка продукта</small></div>
-                        <div class="portfolio-overlay"><h4>3D Анимация упаковки</h4><p>Визуализация и анимация продукта</p></div>
-                    </div>
+                <a href="projects/3d.html" class="work-card large" data-category="3d">
+                    <div class="work-placeholder"><span class="play-icon">▶</span><p>3D Анимация упаковки</p></div>
+                    <div class="work-info"><span class="work-tag">3D</span><h3>Анимация упаковки</h3><p>Blender рендер →</p></div>
                 </a>
-                <a href="projects/apexbank.html" class="portfolio-item" data-category="brand">
-                    <div class="portfolio-card">
-                        <div class="portfolio-placeholder"><span>ApexBank</span><small>Брендинг банка</small></div>
-                        <div class="portfolio-overlay"><h4>ApexBank</h4><p>Фирменный стиль банка</p></div>
-                    </div>
+                <a href="projects/apexbank.html" class="work-card" data-category="brand">
+                    <div class="work-placeholder"><p>ApexBank</p></div>
+                    <div class="work-info"><span class="work-tag">Брендинг</span><h3>ApexBank</h3><p>Фирменный стиль банка →</p></div>
                 </a>
-                <a href="projects/frame.html" class="portfolio-item" data-category="brand">
-                    <div class="portfolio-card">
-                        <div class="portfolio-placeholder"><span>Frame</span><small>Брендинг галереи</small></div>
-                        <div class="portfolio-overlay"><h4>Frame</h4><p>Брендинг галереи</p></div>
-                    </div>
+                <a href="projects/frame.html" class="work-card" data-category="brand">
+                    <div class="work-placeholder"><p>Frame</p></div>
+                    <div class="work-info"><span class="work-tag">Брендинг</span><h3>Frame</h3><p>Галерея →</p></div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Skills -->
     <section id="skills" class="section">
         <div class="container">
-            <div class="section-header"><span class="tag">04</span><h2>Навыки</h2></div>
-            <div class="skills-grid">
-                <div class="skill-group"><h3>Дизайн</h3>
-                    <div class="skill-item"><span>Adobe Photoshop</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
-                    <div class="skill-item"><span>Adobe Illustrator</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
-                    <div class="skill-item"><span>Figma</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-                    <div class="skill-item"><span>Adobe InDesign</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
-                </div>
-                <div class="skill-group"><h3>Видео и 3D</h3>
-                    <div class="skill-item"><span>After Effects</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-                    <div class="skill-item"><span>Premiere Pro</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
-                    <div class="skill-item"><span>Blender</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
-                    <div class="skill-item"><span>Cinema 4D</span><div class="bar"><div class="fill" style="width:60%"></div></div></div>
-                </div>
-                <div class="skill-group"><h3>Специализация</h3>
-                    <div class="tags">
-                        <span class="skill-tag">Логотипы</span><span class="skill-tag">Фирменный стиль</span>
-                        <span class="skill-tag">Брендбуки</span><span class="skill-tag">Инфографика WB/Ozon</span>
-                        <span class="skill-tag">3D визуализация</span><span class="skill-tag">Анимация упаковки</span>
-                        <span class="skill-tag">Типографика</span><span class="skill-tag">Минимализм</span>
-                    </div>
-                </div>
+            <div class="section-header"><span class="section-num">04</span><h2>Инструменты</h2></div>
+            <div class="tools-grid">
+                <div class="tool-item"><span class="tool-name">Photoshop</span><span class="tool-level">Expert</span></div>
+                <div class="tool-item"><span class="tool-name">Illustrator</span><span class="tool-level">Expert</span></div>
+                <div class="tool-item"><span class="tool-name">Figma</span><span class="tool-level">Advanced</span></div>
+                <div class="tool-item"><span class="tool-name">After Effects</span><span class="tool-level">Advanced</span></div>
+                <div class="tool-item"><span class="tool-name">Premiere Pro</span><span class="tool-level">Advanced</span></div>
+                <div class="tool-item"><span class="tool-name">Blender</span><span class="tool-level">Intermediate</span></div>
+                <div class="tool-item"><span class="tool-name">InDesign</span><span class="tool-level">Intermediate</span></div>
+                <div class="tool-item"><span class="tool-name">Cinema 4D</span><span class="tool-level">Learning</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section contact-section">
         <div class="container">
-            <div class="section-header"><span class="tag">05</span><h2>Связаться</h2></div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <p class="lead">Готов обсудить ваш проект. Напишите — отвечу в течение часа.</p>
-                    <div class="contact-links">
-                        <a href="https://t.me/" class="contact-link">📨 Telegram</a>
-                        <a href="https://wa.me/" class="contact-link">📱 WhatsApp</a>
-                        <a href="mailto:" class="contact-link">✉️ Email</a>
-                    </div>
+            <div class="contact-content">
+                <h2>Есть проект?<br><span class="accent">Давайте обсудим.</span></h2>
+                <p>Напишите мне — отвечу в течение часа. Обсудим задачу, сроки и стоимость.</p>
+                <div class="contact-buttons">
+                    <a href="https://t.me/" class="btn btn-primary"><span>Telegram</span></a>
+                    <a href="https://wa.me/" class="btn btn-ghost">WhatsApp</a>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="email" placeholder="Email или Telegram" required>
-                    <textarea placeholder="Расскажите о проекте..." rows="4" required></textarea>
-                    <button type="submit" class="btn btn-primary">Отправить</button>
-                </form>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <span class="nav-logo">KK</span>
+        <div class="container footer-grid">
+            <span class="nav-logo">K<span class="accent">.</span></span>
             <p>© 2026 Кирилл Ковалев</p>
-            <div class="footer-links"><a href="#">Behance</a><a href="#">Kwork</a></div>
+            <div class="footer-links"><a href="#">Behance</a><a href="#">Kwork</a><a href="#">Telegram</a></div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
