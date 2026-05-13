@@ -144,6 +144,55 @@
         </div>
     </section>
 
+    <section id="calculator" class="section">
+        <div class="container">
+            <div class="section-header"><span class="section-num">06</span><h2>Калькулятор</h2></div>
+            <div class="calc-wrapper">
+                <div class="calc-form">
+                    <div class="calc-group">
+                        <label class="calc-label">Услуга</label>
+                        <div class="calc-options" id="serviceOptions">
+                            <button class="calc-option active" data-price="3000" data-service="logo">Логотип</button>
+                            <button class="calc-option" data-price="10000" data-service="brand">Фирменный стиль</button>
+                            <button class="calc-option" data-price="2000" data-service="infographic">Инфографика</button>
+                            <button class="calc-option" data-price="5000" data-service="3d">3D анимация</button>
+                        </div>
+                    </div>
+                    <div class="calc-group">
+                        <label class="calc-label">Количество</label>
+                        <div class="calc-counter">
+                            <button class="calc-minus">−</button>
+                            <span class="calc-count" id="calcCount">1</span>
+                            <button class="calc-plus">+</button>
+                        </div>
+                    </div>
+                    <div class="calc-group">
+                        <label class="calc-label">Срочность</label>
+                        <div class="calc-options" id="urgencyOptions">
+                            <button class="calc-option active" data-mult="1">Обычная</button>
+                            <button class="calc-option" data-mult="1.5">Срочная ×1.5</button>
+                        </div>
+                    </div>
+                    <div class="calc-group">
+                        <label class="calc-label">Дополнительно</label>
+                        <div class="calc-extras">
+                            <label class="calc-check"><input type="checkbox" data-add="2000" id="extraSource"><span>Исходники (AI/PSD)</span><span class="calc-check-price">+2 000 ₽</span></label>
+                            <label class="calc-check"><input type="checkbox" data-add="5000" id="extraBrandbook"><span>Брендбук</span><span class="calc-check-price">+5 000 ₽</span></label>
+                            <label class="calc-check"><input type="checkbox" data-add="1000" id="extraSocial"><span>Адаптация для соцсетей</span><span class="calc-check-price">+1 000 ₽</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="calc-result-inner">
+                        <div class="calc-total-label">Итого</div>
+                        <div class="calc-total" id="calcTotal">3 000 ₽</div>
+                        <div class="calc-note">Точная стоимость после обсуждения ТЗ</div>
+                        <a href="https://t.me/vamonny" class="btn btn-primary calc-btn" target="_blank"><span>Заказать в Telegram</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="contact-content">

@@ -62,3 +62,51 @@ window.addEventListener('scroll', () => {
         ticking = true;
     }
 });
+// Calculator
+(function() {
+    let basePrice = 3000;
+    let count = 1;
+    let urgency = 1;
+
+    function updateTotal() {
+        let extras = 0;
+        document.querySelectorAll('.calc-extras input:checked').forEach(cb => {
+            extras += parseInt(cb.dataset.add);
+        });
+        const total = (basePrice * count * urgency) + extras;
+        const el = document.getElementById('calcTotal');
+        if (el) el.textContent = total.toLocaleString('ru-RU') + ' ₽';
+    }
+
+    // Service buttons
+    document.querySelectorAll('#serviceOptions .calc-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('#serviceOptions .calc-option').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            basePrice = parseInt(btn.dataset.price);
+            updateTotal();
+        });
+    });
+
+    // Urgency buttons
+    document.querySelectorAll('#urgencyOptions .calc-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('#urgencyOptions .calc-option').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            urgency = parseFloat(btn.dataset.mult);
+            updateTotal();
+        });
+    });
+
+    // Counter
+    const minus = document.querySelector('.calc-minus');
+    const plus = document.querySelector('.calc-plus');
+    const countEl = document.getElementById('calcCount');
+    if (minus) minus.addEventListener('click', () => { if (count > 1) { count--; countEl.textContent = count; updateTotal(); } });
+    if (plus) plus.addEventListener('click', () => { if (count < 20) { count++; countEl.textContent = count; updateTotal(); } });
+
+    // Extras
+    document.querySelectorAll('.calc-extras input').forEach(cb => {
+        cb.addEventListener('change', updateTotal);
+    });
+})();
