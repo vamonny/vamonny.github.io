@@ -15,3 +15,21 @@ document.querySelectorAll('.faq-q').forEach(q => {
     if (!active) item.classList.add('active');
   });
 });
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.work-row, .sv-item, .faq-item, .about-content p, .tools');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObs.observe(el));
+
+// Header scroll effect
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
