@@ -22,7 +22,7 @@
 .project-gallery img:hover { border-color: #b9ff66; }
 @media (max-width: 768px) { .project-gallery { grid-template-columns: 1fr; } .project-page { padding: 40px 20px; } }
 </style>
-</head>
+<style>body,a,button{cursor:none}.cursor-dot{position:fixed;top:0;left:0;width:8px;height:8px;background:rgba(180,160,255,0.9);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.1s,width 0.3s,height 0.3s;transform:translate(-50%,-50%)}.cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid rgba(180,160,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transition:transform 0.15s ease-out,width 0.3s,height 0.3s,border-color 0.3s,background 0.3s;transform:translate(-50%,-50%)}.cursor-dot.hover{width:12px;height:12px;background:rgba(180,160,255,1)}.cursor-ring.hover{width:52px;height:52px;border-color:rgba(180,160,255,0.6);background:rgba(180,160,255,0.05)}@media(max-width:768px){.cursor-dot,.cursor-ring{display:none}body,a,button{cursor:auto}}</style></head>
 <body>
 <div class="project-page">
 <a href="../index.html#works" class="project-back" data-ru="← Назад к работам" data-en="← Back to works">← Назад к работам</a>
@@ -47,5 +47,5 @@
 </div>
 </div>
 <script src="../script.js"></script>
-</body>
+<div class="cursor-dot" id="cursorDot"></div><div class="cursor-ring" id="cursorRing"></div><script>var dot=document.getElementById("cursorDot"),ring=document.getElementById("cursorRing");if(dot&&ring){var mx=0,my=0,dx=0,dy=0;document.addEventListener("mousemove",function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+"px";dot.style.top=my+"px"});function animate(){dx+=(mx-dx)*0.15;dy+=(my-dy)*0.15;ring.style.left=dx+"px";ring.style.top=dy+"px";requestAnimationFrame(animate)}animate();document.querySelectorAll("a,button").forEach(function(el){el.addEventListener("mouseenter",function(){dot.classList.add("hover");ring.classList.add("hover")});el.addEventListener("mouseleave",function(){dot.classList.remove("hover");ring.classList.remove("hover")})})}</script></body>
 </html>
