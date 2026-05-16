@@ -1,47 +1,59 @@
-﻿// Scroll reveal
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.section').forEach(s => observer.observe(s));
+﻿// === LANGUAGE SWITCH ===
+let currentLang = 'ru';
+const langBtn = document.getElementById('langSwitch');
 
-// Parallax hero
-window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    const bg = document.querySelector('.hero-bg-text');
-    const content = document.querySelector('.hero-content');
-    if (bg) bg.style.transform = `translateY(${y * 0.3}px)`;
-    if (content && y < window.innerHeight) {
-        content.style.transform = `translateY(${y * 0.15}px)`;
-        content.style.opacity = 1 - y / (window.innerHeight * 0.8);
+langBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'ru' ? 'en' : 'ru';
+  langBtn.textContent = currentLang === 'ru' ? 'EN' : 'RU';
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang);
+  });
+});
+
+// === SLIDER ===
+const track = document.querySelector('.works-track');
+const prevBtn = document.querySelector('.slider-prev');
+const nextBtn = document.querySelector('.slider-next');
+
+if (track && prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -340, behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: 340, behavior: 'smooth' });
+  });
+}
+
+// === FAQ ACCORDION ===
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  });
+});
+
+// === SCROLL REVEAL ===
+const revealElements = document.querySelectorAll('.services, .about, .faq, .contacts, .service-card, .work-card');
+revealElements.forEach(el => el.classList.add('reveal'));
+
+const revealOnScroll = () => {
+  revealElements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('visible');
     }
+  });
+};
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+// === PARALLAX HERO ===
+const heroBg = document.querySelector('.hero-bg');
+window.addEventListener('scroll', () => {
+  if (heroBg) {
+    const scrolled = window.pageYOffset;
+    heroBg.style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
+  }
 });
-
-// Slider
-let slidePos = 0;
-const track = document.getElementById('sliderTrack');
-function slideRight() {
-    slidePos = Math.min(slidePos + 370, (track.children.length - 2) * 370);
-    track.style.transform = `translateX(-${slidePos}px)`;
-}
-function slideLeft() {
-    slidePos = Math.max(slidePos - 370, 0);
-    track.style.transform = `translateX(-${slidePos}px)`;
-}
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
-// Language switch
-let currentLang = 'en';
-function toggleLang() {
-    currentLang = currentLang === 'en' ? 'ru' : 'en';
-    document.getElementById('langBtn').textContent = currentLang === 'en' ? 'RU' : 'EN';
-    document.querySelectorAll('[data-ru][data-en]').forEach(el => {
-        el.textContent = el.getAttribute('data-' + currentLang);
-    });
-}
