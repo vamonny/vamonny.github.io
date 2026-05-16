@@ -5,259 +5,395 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VAMONNY — Графический дизайнер</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="loader"><span>V</span></div>
 
-<!-- LANG SWITCH -->
-<button id="lang-btn" onclick="toggleLang()">EN</button>
-
-<!-- NAV -->
-<nav id="nav">
-<a href="#hero" class="nav-logo">V.</a>
-<div class="nav-links">
+<!-- TOP NAV -->
+<nav class="top-nav">
+<div class="top-nav-logo">VAMONNY</div>
+<div class="top-nav-links">
+<a href="#hero" data-ru="Главная" data-en="Home">Главная</a>
 <a href="#works" data-ru="Работы" data-en="Works">Работы</a>
 <a href="#services" data-ru="Услуги" data-en="Services">Услуги</a>
 <a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a>
-<a href="#faq" data-ru="FAQ" data-en="FAQ">FAQ</a>
-<a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a>
+<a href="#contacts" data-ru="Контакты" data-en="Contacts">Контакты</a>
+</div>
+<div class="top-nav-right">
+<button class="lang-btn" id="langSwitch">EN</button>
 </div>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-<div class="hero-content" data-parallax>
-<p class="hero-tag" data-ru="Графический дизайнер • Нижний Новгород" data-en="Graphic Designer • Nizhny Novgorod">Графический дизайнер • Нижний Новгород</p>
-<h1 class="glitch" data-text="VAMONNY">VAMONNY</h1>
-<p class="hero-sub" data-ru="Создаю визуал, который продаёт. Логотипы, инфографика, брендинг, 3D." data-en="Creating visuals that sell. Logos, infographics, branding, 3D.">Создаю визуал, который продаёт. Логотипы, инфографика, брендинг, 3D.</p>
-<a href="#contact" class="cta-btn pulse" data-ru="Обсудить проект" data-en="Discuss project">Обсудить проект</a>
+<!-- SIDE NAV -->
+<nav class="side-nav">
+<a href="#hero" class="side-nav-item active" data-section="hero" data-ru="ГЛАВНАЯ" data-en="HOME">ГЛАВНАЯ</a>
+<a href="#works" class="side-nav-item" data-section="works" data-ru="РАБОТЫ" data-en="WORKS">РАБОТЫ</a>
+<a href="#services" class="side-nav-item" data-section="services" data-ru="УСЛУГИ" data-en="SERVICES">УСЛУГИ</a>
+<a href="#about" class="side-nav-item" data-section="about" data-ru="ОБО МНЕ" data-en="ABOUT">ОБО МНЕ</a>
+<a href="#faq" class="side-nav-item" data-section="faq" data-ru="FAQ" data-en="FAQ">FAQ</a>
+<a href="#contacts" class="side-nav-item" data-section="contacts" data-ru="КОНТАКТЫ" data-en="CONTACTS">КОНТАКТЫ</a>
+</nav>
+
+<!-- PLAY BUTTON -->
+<a href="https://t.me/vamonny" target="_blank" class="play-btn">
+<span class="play-icon">▶</span>
+<span class="play-text">PLAY</span>
+</a>
+
+<!-- HERO SECTION -->
+<section class="section section-hero" id="hero" data-bg="#0a0a0a">
+<div class="hero-content">
+<p class="hero-top-text" data-ru="Графический дизайнер • Нижний Новгород" data-en="Graphic Designer • Nizhny Novgorod">Графический дизайнер • Нижний Новгород</p>
+<h1 class="hero-title">VAMONNY</h1>
+<p class="hero-tagline" data-ru="Создаю визуал, который продаёт. Логотипы, инфографика, брендинг, 3D." data-en="Creating visuals that sell. Logos, infographics, branding, 3D.">Создаю визуал, который продаёт. Логотипы, инфографика, брендинг, 3D.</p>
+<a href="#contacts" class="hero-cta" data-ru="ОБСУДИТЬ ПРОЕКТ" data-en="DISCUSS PROJECT">ОБСУДИТЬ ПРОЕКТ</a>
 </div>
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee">
-<div class="marquee-track">
-<span>ЛОГОТИПЫ ★ ИНФОГРАФИКА ★ БРЕНДИНГ ★ 3D АНИМАЦИЯ ★ ФИРМЕННЫЙ СТИЛЬ ★ WEB-ДИЗАЙН ★ УПАКОВКА ★ ЛОГОТИПЫ ★ ИНФОГРАФИКА ★ БРЕНДИНГ ★ 3D АНИМАЦИЯ ★ ФИРМЕННЫЙ СТИЛЬ ★ WEB-ДИЗАЙН ★ УПАКОВКА ★</span>
+<div class="marquee-strip">
+<div class="marquee-inner">
+<span>★ ЛОГОТИПЫ ★ ИНФОГРАФИКА ★ ФИРМЕННЫЙ СТИЛЬ ★ 3D АНИМАЦИЯ ★ БРЕНДБУКИ ★ WEB-ДИЗАЙН ★ УПАКОВКА ★ ЛОГОТИПЫ ★ ИНФОГРАФИКА ★ ФИРМЕННЫЙ СТИЛЬ ★ 3D АНИМАЦИЯ ★ БРЕНДБУКИ ★ WEB-ДИЗАЙН ★ УПАКОВКА ★</span>
 </div>
 </div>
 
-<!-- WORKS -->
-<section id="works" class="section">
-<h2 class="section-title" data-ru="Работы" data-en="Works">Работы</h2>
-<div class="works-slider">
-<button class="slider-arrow left" onclick="slideWorks(-1)">&#10094;</button>
-<div class="works-track" id="works-track">
-
-<a href="projects/dental-clinic.html" class="work-card" data-ru="Сайт стоматологии «Семья»" data-en="Dental Clinic Website">
-<img src="img/works/dental-clinic/1.png" alt="Dental Clinic">
-<div class="work-overlay"><span data-ru="Сайт стоматологии «Семья»" data-en="Dental Clinic Website">Сайт стоматологии «Семья»</span></div>
-</a>
-
-<a href="projects/infographics.html" class="work-card" data-ru="Инфографика для маркетплейсов" data-en="Marketplace Infographics">
-<img src="img/works/infographics/1.png" alt="Infographics">
-<div class="work-overlay"><span data-ru="Инфографика для маркетплейсов" data-en="Marketplace Infographics">Инфографика для маркетплейсов</span></div>
-</a>
-
-<a href="projects/logofolio-alexander.html" class="work-card" data-ru="Логофолио Александр" data-en="Logofolio Alexander">
-<img src="img/works/logofolio-alexander/1.png" alt="Logofolio">
-<div class="work-overlay"><span data-ru="Логофолио Александр" data-en="Logofolio Alexander">Логофолио Александр</span></div>
-</a>
-
-<a href="projects/logofolio-gnel.html" class="work-card" data-ru="Логофолио Гнел" data-en="Logofolio Gnel">
-<img src="img/works/logofolio-gnel/1.png" alt="Logofolio Gnel">
-<div class="work-overlay"><span data-ru="Логофолио Гнел" data-en="Logofolio Gnel">Логофолио Гнел</span></div>
-</a>
-
-<a href="projects/logofolio-albert.html" class="work-card" data-ru="Логофолио Альберт" data-en="Logofolio Albert">
-<img src="img/works/logofolio-albert/1.png" alt="Logofolio Albert">
-<div class="work-overlay"><span data-ru="Логофолио Альберт" data-en="Logofolio Albert">Логофолио Альберт</span></div>
-</a>
-
-<a href="projects/apex-brandbook.html" class="work-card" data-ru="Брендбук Apex Bank" data-en="Apex Bank Brandbook">
-<img src="img/works/apex-brandbook/1.png" alt="Apex Brandbook">
-<div class="work-overlay"><span data-ru="Брендбук Apex Bank" data-en="Apex Bank Brandbook">Брендбук Apex Bank</span></div>
-</a>
-
-<a href="projects/pafos-brandbook.html" class="work-card" data-ru="Брендбук клуба «Пафос»" data-en="Pafos Club Brandbook">
-<img src="img/works/pafos-brandbook/1.png" alt="Pafos">
-<div class="work-overlay"><span data-ru="Брендбук клуба «Пафос»" data-en="Pafos Club Brandbook">Брендбук клуба «Пафос»</span></div>
-</a>
-
-<a href="projects/recipe-book.html" class="work-card" data-ru="Дизайн книги рецептов" data-en="Recipe Book Design">
-<img src="img/works/recipe-book/1.jpg" alt="Recipe Book">
-<div class="work-overlay"><span data-ru="Дизайн книги рецептов" data-en="Recipe Book Design">Дизайн книги рецептов</span></div>
-</a>
-
-<a href="projects/quest-book.html" class="work-card" data-ru="Квест-книга для детей" data-en="Quest Book for Kids">
-<img src="img/works/quest-book/1.jpg" alt="Quest Book">
-<div class="work-overlay"><span data-ru="Квест-книга для детей" data-en="Quest Book for Kids">Квест-книга для детей</span></div>
-</a>
-
-<a href="projects/3d-animation.html" class="work-card" data-ru="3D анимация упаковки" data-en="3D Packaging Animation">
-<img src="img/works/3d-animation/1.png" alt="3D Animation">
-<div class="work-overlay"><span data-ru="3D анимация упаковки" data-en="3D Packaging Animation">3D анимация упаковки</span></div>
-</a>
-
+<!-- WORKS SECTION -->
+<section class="section section-works" id="works" data-bg="#0d0d0d">
+<h2 class="big-title" data-ru="РАБОТЫ" data-en="WORKS">РАБОТЫ</h2>
+<div class="works-grid">
+<a href="projects/dental-clinic.html" class="work-item">
+<div class="work-img"><img src="img/works/dental-clinic/1.png" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Сайт стоматологии «Семья»" data-en="Dental Clinic Website">Сайт стоматологии «Семья»</h3>
+<span data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</span>
 </div>
-<button class="slider-arrow right" onclick="slideWorks(1)">&#10095;</button>
+</a>
+<a href="projects/infographics.html" class="work-item">
+<div class="work-img"><img src="img/works/infographics/1.png" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Инфографика WB/Ozon" data-en="Marketplace Infographics">Инфографика WB/Ozon</h3>
+<span data-ru="Инфографика" data-en="Infographics">Инфографика</span>
+</div>
+</a>
+<a href="projects/logofolio-alexander.html" class="work-item">
+<div class="work-img"><img src="img/works/logofolio-alexander/1.png" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Логофолио Александр" data-en="Logofolio Alexander">Логофолио Александр</h3>
+<span data-ru="Логотипы" data-en="Logos">Логотипы</span>
+</div>
+</a>
+<a href="projects/logofolio-gnel.html" class="work-item">
+<div class="work-img"><img src="img/works/logofolio-gnel/1.png" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Логофолио Гнел" data-en="Logofolio Gnel">Логофолио Гнел</h3>
+<span data-ru="Логотипы" data-en="Logos">Логотипы</span>
+</div>
+</a>
+<a href="projects/logofolio-albert.html" class="work-item">
+<div class="work-img"><img src="img/works/logofolio-albert/1.png" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Логофолио Альберт" data-en="Logofolio Albert">Логофолио Альберт</h3>
+<span data-ru="Брендинг • 3D" data-en="Branding • 3D">Брендинг • 3D</span>
+</div>
+</a>
+<a href="projects/pafos-brandbook.html" class="work-item">
+<div class="work-img"><img src="img/works/pafos-brandbook/1.png" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Брендбук «Пафос»" data-en="Pafos Brandbook">Брендбук «Пафос»</h3>
+<span data-ru="Фирменный стиль" data-en="Brand Identity">Фирменный стиль</span>
+</div>
+</a>
+<a href="projects/apex-brandbook.html" class="work-item">
+<div class="work-img"><img src="img/works/apex-brandbook/1.png" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Брендбук Apex Bank" data-en="Apex Bank Brandbook">Брендбук Apex Bank</h3>
+<span data-ru="Брендинг" data-en="Branding">Брендинг</span>
+</div>
+</a>
+<a href="projects/recipe-book.html" class="work-item">
+<div class="work-img"><img src="img/works/recipe-book/1.jpg" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Книга рецептов" data-en="Recipe Book">Книга рецептов</h3>
+<span data-ru="Полиграфия" data-en="Print">Полиграфия</span>
+</div>
+</a>
+<a href="projects/quest-book.html" class="work-item">
+<div class="work-img"><img src="img/works/quest-book/1.jpg" alt=""></div>
+<div class="work-info">
+<h3 data-ru="Квест-книга для детей" data-en="Quest Book for Kids">Квест-книга для детей</h3>
+<span data-ru="Иллюстрация" data-en="Illustration">Иллюстрация</span>
+</div>
+</a>
+<a href="projects/3d-animation.html" class="work-item">
+<div class="work-img"><img src="img/works/3d-animation/1.png" alt=""></div>
+<div class="work-info">
+<h3 data-ru="3D Анимация упаковки" data-en="3D Packaging Animation">3D Анимация упаковки</h3>
+<span data-ru="3D • Motion" data-en="3D • Motion">3D • Motion</span>
+</div>
+</a>
 </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section">
-<h2 class="section-title" data-ru="Услуги" data-en="Services">Услуги</h2>
-<div class="services-grid">
-<div class="service-card"><div class="service-icon">◆</div><h3 data-ru="Логотипы" data-en="Logos">Логотипы</h3><p data-ru="Уникальные знаки и леттеринг для вашего бренда" data-en="Unique marks and lettering for your brand">Уникальные знаки и леттеринг для вашего бренда</p></div>
-<div class="service-card"><div class="service-icon">◆</div><h3 data-ru="Инфографика" data-en="Infographics">Инфографика</h3><p data-ru="Карточки товаров для WB, Ozon и маркетплейсов" data-en="Product cards for marketplaces">Карточки товаров для WB, Ozon и маркетплейсов</p></div>
-<div class="service-card"><div class="service-icon">◆</div><h3 data-ru="Фирменный стиль" data-en="Brand Identity">Фирменный стиль</h3><p data-ru="Полная айдентика: от визитки до брендбука" data-en="Full identity: from business card to brandbook">Полная айдентика: от визитки до брендбука</p></div>
-<div class="service-card"><div class="service-icon">◆</div><h3 data-ru="3D Анимация" data-en="3D Animation">3D Анимация</h3><p data-ru="Анимация упаковки и продуктов для рекламы" data-en="Packaging and product animation for ads">Анимация упаковки и продуктов для рекламы</p></div>
-<div class="service-card"><div class="service-icon">◆</div><h3 data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</h3><p data-ru="Лендинги и многостраничные сайты в Figma" data-en="Landing pages and multi-page sites in Figma">Лендинги и многостраничные сайты в Figma</p></div>
-<div class="service-card"><div class="service-icon">◆</div><h3 data-ru="Полиграфия" data-en="Print Design">Полиграфия</h3><p data-ru="Визитки, буклеты, каталоги, упаковка" data-en="Business cards, brochures, catalogs, packaging">Визитки, буклеты, каталоги, упаковка</p></div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-<h2 class="section-title" data-ru="Обо мне" data-en="About me">Обо мне</h2>
-<div class="about-content">
-<div class="about-text">
-<p data-ru="Привет! Я Кирилл — графический дизайнер из Нижнего Новгорода. Мне 18, учусь на 3 курсе IT TOP и параллельно работаю на фрилансе." data-en="Hi! I'm Kirill — a graphic designer from Nizhny Novgorod, Russia. I'm 18, studying at IT TOP college while freelancing.">Привет! Я Кирилл — графический дизайнер из Нижнего Новгорода. Мне 18, учусь на 3 курсе IT TOP и параллельно работаю на фрилансе.</p>
-<p data-ru="Специализируюсь на инфографике для маркетплейсов, логотипах, фирменном стиле и 3D анимации упаковки. Работаю в Adobe Photoshop, Illustrator, After Effects, Figma, 3ds Max." data-en="I specialize in marketplace infographics, logos, brand identity and 3D packaging animation. I work in Adobe Photoshop, Illustrator, After Effects, Figma, 3ds Max.">Специализируюсь на инфографике для маркетплейсов, логотипах, фирменном стиле и 3D анимации упаковки. Работаю в Adobe Photoshop, Illustrator, After Effects, Figma, 3ds Max.</p>
-<p data-ru="Мой подход — минимализм и функциональность. Каждый проект решает конкретную бизнес-задачу клиента." data-en="My approach — minimalism and functionality. Every project solves a specific business problem.">Мой подход — минимализм и функциональность. Каждый проект решает конкретную бизнес-задачу клиента.</p>
-</div>
-<div class="about-stats">
-<div class="stat"><span class="stat-num">30+</span><span class="stat-label" data-ru="проектов" data-en="projects">проектов</span></div>
-<div class="stat"><span class="stat-num">15+</span><span class="stat-label" data-ru="клиентов" data-en="clients">клиентов</span></div>
-<div class="stat"><span class="stat-num">2+</span><span class="stat-label" data-ru="года опыта" data-en="years exp.">года опыта</span></div>
-</div>
-</div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="section">
-<h2 class="section-title" data-ru="FAQ" data-en="FAQ">FAQ</h2>
-<div class="faq-list">
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" data-ru="Сколько стоит логотип?" data-en="How much does a logo cost?">Сколько стоит логотип?</div><div class="faq-a" data-ru="От 3,000 руб. Цена зависит от сложности и количества концепций." data-en="From 3,000 RUB. Price depends on complexity and number of concepts.">От 3,000 руб. Цена зависит от сложности и количества концепций.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" data-ru="Какие сроки?" data-en="What are the deadlines?">Какие сроки?</div><div class="faq-a" data-ru="Логотип — 2-5 дней. Фирменный стиль — 5-10 дней. Инфографика — 1-3 дня за карточку." data-en="Logo — 2-5 days. Brand identity — 5-10 days. Infographics — 1-3 days per card.">Логотип — 2-5 дней. Фирменный стиль — 5-10 дней. Инфографика — 1-3 дня за карточку.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" data-ru="Как происходит оплата?" data-en="How does payment work?">Как происходит оплата?</div><div class="faq-a" data-ru="50% предоплата, 50% после утверждения. Для постоянных клиентов — по факту." data-en="50% upfront, 50% after approval. For regular clients — upon completion.">50% предоплата, 50% после утверждения. Для постоянных клиентов — по факту.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" data-ru="Сколько правок включено?" data-en="How many revisions are included?">Сколько правок включено?</div><div class="faq-a" data-ru="2-3 раунда правок включены в стоимость. Дополнительные — по договорённости." data-en="2-3 rounds of revisions included. Additional — by agreement.">2-3 раунда правок включены в стоимость. Дополнительные — по договорённости.</div></div>
-<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" data-ru="В каком формате отдаёте файлы?" data-en="What file formats do you deliver?">В каком формате отдаёте файлы?</div><div class="faq-a" data-ru="AI, EPS, SVG, PNG, PDF — в зависимости от проекта. Исходники всегда включены." data-en="AI, EPS, SVG, PNG, PDF — depending on the project. Source files always included.">AI, EPS, SVG, PNG, PDF — в зависимости от проекта. Исходники всегда включены.</div></div>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-<h2 class="section-title" data-ru="Контакты" data-en="Contact">Контакты</h2>
-<p class="contact-sub" data-ru="Напишите мне — обсудим ваш проект" data-en="Write to me — let's discuss your project">Напишите мне — обсудим ваш проект</p>
-<div class="contact-links">
-<a href="https://t.me/vamonny" target="_blank" class="contact-item">Telegram</a>
-<a href="https://vk.com/vamonny" target="_blank" class="contact-item">VK</a>
-<a href="https://kwork.ru/user/vamonny" target="_blank" class="contact-item">Kwork</a>
-<a href="https://t.me/vamonny_lab" target="_blank" class="contact-item" data-ru="Канал" data-en="Channel">Канал</a>
-<a href="mailto:vamonny06@gmail.com" class="contact-item">Email</a>
-</div>
-</section>
-
-<footer>
-<p>© 2026 VAMONNY. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
-<!-- SERVICES -->
-<section class="services" id="services">
-<h2 class="section-title" data-ru="Услуги" data-en="Services">Услуги</h2>
-<div class="services-grid">
-<div class="service-card">
-<div class="service-icon">◆</div>
+<section class="section section-services" id="services" data-bg="#111">
+<h2 class="big-title" data-ru="УСЛУГИ" data-en="SERVICES">УСЛУГИ</h2>
+<div class="services-list">
+<div class="service-row">
+<span class="service-num">01</span>
 <h3 data-ru="Логотипы" data-en="Logos">Логотипы</h3>
-<p data-ru="Разработка уникального логотипа с нуля. Несколько концепций, правки до идеала." data-en="Unique logo design from scratch. Multiple concepts, revisions until perfect.">Разработка уникального логотипа с нуля. Несколько концепций, правки до идеала.</p>
+<p data-ru="Уникальный логотип с нуля. 2-3 концепции + правки до идеала." data-en="Unique logo from scratch. 2-3 concepts + revisions until perfect.">Уникальный логотип с нуля. 2-3 концепции + правки до идеала.</p>
 </div>
-<div class="service-card">
-<div class="service-icon">◆</div>
+<div class="service-row">
+<span class="service-num">02</span>
 <h3 data-ru="Фирменный стиль" data-en="Brand Identity">Фирменный стиль</h3>
-<p data-ru="Полная айдентика бренда: логотип, цвета, типографика, носители, брендбук." data-en="Complete brand identity: logo, colors, typography, media, brandbook.">Полная айдентика бренда: логотип, цвета, типографика, носители, брендбук.</p>
+<p data-ru="Полная айдентика: логотип, цвета, типографика, носители, брендбук." data-en="Full identity: logo, colors, typography, media, brandbook.">Полная айдентика: логотип, цвета, типографика, носители, брендбук.</p>
 </div>
-<div class="service-card">
-<div class="service-icon">◆</div>
+<div class="service-row">
+<span class="service-num">03</span>
 <h3 data-ru="Инфографика" data-en="Infographics">Инфографика</h3>
-<p data-ru="Карточки товаров для WB и Ozon. Продающий дизайн, который увеличивает конверсию." data-en="Product cards for marketplaces. Selling design that increases conversion.">Карточки товаров для WB и Ozon. Продающий дизайн, который увеличивает конверсию.</p>
+<p data-ru="Карточки товаров для WB и Ozon. Дизайн, который увеличивает конверсию." data-en="Product cards for WB and Ozon. Design that increases conversion.">Карточки товаров для WB и Ozon. Дизайн, который увеличивает конверсию.</p>
 </div>
-<div class="service-card">
-<div class="service-icon">◆</div>
+<div class="service-row">
+<span class="service-num">04</span>
 <h3 data-ru="3D Анимация" data-en="3D Animation">3D Анимация</h3>
-<p data-ru="Анимация упаковки и продуктов в 3D. Реалистичные рендеры для презентаций." data-en="3D packaging and product animation. Realistic renders for presentations.">Анимация упаковки и продуктов в 3D. Реалистичные рендеры для презентаций.</p>
+<p data-ru="Анимация упаковки и продуктов. Реалистичные рендеры в 3ds Max." data-en="Packaging and product animation. Realistic renders in 3ds Max.">Анимация упаковки и продуктов. Реалистичные рендеры в 3ds Max.</p>
 </div>
-<div class="service-card">
-<div class="service-icon">◆</div>
+<div class="service-row">
+<span class="service-num">05</span>
 <h3 data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</h3>
-<p data-ru="Дизайн сайтов и лендингов в Figma. Современный UI/UX с адаптивом." data-en="Website and landing page design in Figma. Modern UI/UX with responsive layout.">Дизайн сайтов и лендингов в Figma. Современный UI/UX с адаптивом.</p>
+<p data-ru="Дизайн сайтов и лендингов в Figma. UI/UX с адаптивом." data-en="Website and landing design in Figma. UI/UX with responsive.">Дизайн сайтов и лендингов в Figma. UI/UX с адаптивом.</p>
 </div>
-<div class="service-card">
-<div class="service-icon">◆</div>
+<div class="service-row">
+<span class="service-num">06</span>
 <h3 data-ru="Полиграфия" data-en="Print Design">Полиграфия</h3>
-<p data-ru="Визитки, буклеты, каталоги, книги. Допечатная подготовка под любой формат." data-en="Business cards, brochures, catalogs, books. Prepress for any format.">Визитки, буклеты, каталоги, книги. Допечатная подготовка под любой формат.</p>
+<p data-ru="Визитки, буклеты, каталоги, книги. Допечатная подготовка." data-en="Business cards, brochures, catalogs, books. Prepress.">Визитки, буклеты, каталоги, книги. Допечатная подготовка.</p>
 </div>
 </div>
 </section>
 
 <!-- ABOUT -->
-<section class="about" id="about">
-<h2 class="section-title" data-ru="Обо мне" data-en="About Me">Обо мне</h2>
-<div class="about-content">
-<div class="about-text">
-<p data-ru="Привет! Я Кирилл — графический дизайнер из Нижнего Новгорода. Мне 18, учусь на 3 курсе IT TOP и параллельно работаю на фрилансе." data-en="Hi! I'm Kirill — a graphic designer from Nizhny Novgorod. I'm 18, studying at IT TOP college and freelancing at the same time.">Привет! Я Кирилл — графический дизайнер из Нижнего Новгорода. Мне 18, учусь на 3 курсе IT TOP и параллельно работаю на фрилансе.</p>
-<p data-ru="Специализируюсь на создании визуальной идентичности брендов: от логотипа до полного брендбука. Также делаю инфографику для маркетплейсов, 3D-анимации упаковки и веб-дизайн." data-en="I specialize in creating visual brand identity: from logo to full brandbook. I also create marketplace infographics, 3D packaging animations and web design.">Специализируюсь на создании визуальной идентичности брендов: от логотипа до полного брендбука. Также делаю инфографику для маркетплейсов, 3D-анимации упаковки и веб-дизайн.</p>
-<p data-ru="Мой стек: Adobe Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max." data-en="My stack: Adobe Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max.">Мой стек: Adobe Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max.</p>
+<section class="section section-about" id="about" data-bg="#0a0a0a">
+<div class="about-layout">
+<div class="about-left">
+<h2 class="big-title" data-ru="ОБО МНЕ" data-en="ABOUT ME">ОБО МНЕ</h2>
+<p data-ru="Кирилл, 18 лет. Графический дизайнер из Нижнего Новгорода. Студент 3 курса IT TOP. Делаю айдентику, инфографику для маркетплейсов, 3D-анимации и веб-дизайн." data-en="Kirill, 18 y.o. Graphic designer from Nizhny Novgorod. 3rd year IT TOP student. Creating identity, marketplace infographics, 3D animations and web design.">Кирилл, 18 лет. Графический дизайнер из Нижнего Новгорода. Студент 3 курса IT TOP. Делаю айдентику, инфографику для маркетплейсов, 3D-анимации и веб-дизайн.</p>
+<p data-ru="Стек: Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max, Maya." data-en="Stack: Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max, Maya.">Стек: Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max, Maya.</p>
 </div>
-<div class="about-stats">
-<div class="stat"><span class="stat-num">20+</span><span class="stat-label" data-ru="проектов" data-en="projects">проектов</span></div>
-<div class="stat"><span class="stat-num">10+</span><span class="stat-label" data-ru="клиентов" data-en="clients">клиентов</span></div>
-<div class="stat"><span class="stat-num">2+</span><span class="stat-label" data-ru="года опыта" data-en="years experience">года опыта</span></div>
+<div class="about-right">
+<div class="about-stat"><span>20+</span><small data-ru="проектов" data-en="projects">проектов</small></div>
+<div class="about-stat"><span>10+</span><small data-ru="клиентов" data-en="clients">клиентов</small></div>
+<div class="about-stat"><span>2+</span><small data-ru="года опыта" data-en="years exp">года опыта</small></div>
 </div>
 </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq" id="faq">
-<h2 class="section-title" data-ru="FAQ" data-en="FAQ">FAQ</h2>
+<section class="section section-faq" id="faq" data-bg="#0d0d0d">
+<h2 class="big-title">FAQ</h2>
 <div class="faq-list">
 <div class="faq-item">
 <div class="faq-q" data-ru="Сколько стоит логотип?" data-en="How much does a logo cost?">Сколько стоит логотип?</div>
-<div class="faq-a" data-ru="От 3,000 руб. Цена зависит от сложности и количества концепций. Обычно делаю 2-3 варианта + правки." data-en="From 3,000 RUB. Price depends on complexity and number of concepts. Usually I make 2-3 options + revisions.">От 3,000 руб. Цена зависит от сложности и количества концепций. Обычно делаю 2-3 варианта + правки.</div>
+<div class="faq-a" data-ru="От 3,000 руб. 2-3 концепции + правки включены." data-en="From 3,000 RUB. 2-3 concepts + revisions included.">От 3,000 руб. 2-3 концепции + правки включены.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q" data-ru="Какие сроки выполнения?" data-en="What are the deadlines?">Какие сроки выполнения?</div>
-<div class="faq-a" data-ru="Логотип — 2-3 дня. Фирменный стиль — 5-7 дней. Инфографика — 1-2 дня за карточку. Срочные заказы обсуждаются отдельно." data-en="Logo — 2-3 days. Brand identity — 5-7 days. Infographics — 1-2 days per card. Rush orders discussed separately.">Логотип — 2-3 дня. Фирменный стиль — 5-7 дней. Инфографика — 1-2 дня за карточку. Срочные заказы обсуждаются отдельно.</div>
+<div class="faq-q" data-ru="Какие сроки?" data-en="What are deadlines?">Какие сроки?</div>
+<div class="faq-a" data-ru="Логотип — 2-3 дня. Фирменный стиль — 5-7 дней. Инфографика — 1-2 дня/карточка." data-en="Logo — 2-3 days. Brand identity — 5-7 days. Infographics — 1-2 days/card.">Логотип — 2-3 дня. Фирменный стиль — 5-7 дней. Инфографика — 1-2 дня/карточка.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q" data-ru="Как происходит оплата?" data-en="How does payment work?">Как происходит оплата?</div>
-<div class="faq-a" data-ru="50% предоплата, 50% после утверждения финального варианта. Принимаю переводы на карту или через Kwork." data-en="50% prepayment, 50% after final approval. I accept bank transfers or Kwork.">50% предоплата, 50% после утверждения финального варианта. Принимаю переводы на карту или через Kwork.</div>
+<div class="faq-q" data-ru="Как оплата?" data-en="How does payment work?">Как оплата?</div>
+<div class="faq-a" data-ru="50% предоплата, 50% после. Карта или Kwork." data-en="50% prepayment, 50% after. Bank card or Kwork.">50% предоплата, 50% после. Карта или Kwork.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q" data-ru="Сколько правок включено?" data-en="How many revisions are included?">Сколько правок включено?</div>
-<div class="faq-a" data-ru="2-3 раунда правок включены в стоимость. Обычно хватает, потому что я внимательно слушаю ТЗ." data-en="2-3 rounds of revisions included. Usually enough because I listen carefully to the brief.">2-3 раунда правок включены в стоимость. Обычно хватает, потому что я внимательно слушаю ТЗ.</div>
+<div class="faq-q" data-ru="Сколько правок?" data-en="How many revisions?">Сколько правок?</div>
+<div class="faq-a" data-ru="2-3 раунда включены в стоимость." data-en="2-3 rounds included in price.">2-3 раунда включены в стоимость.</div>
 </div>
 <div class="faq-item">
-<div class="faq-q" data-ru="В каком формате отдаёте файлы?" data-en="What file formats do you deliver?">В каком формате отдаёте файлы?</div>
-<div class="faq-a" data-ru="AI, EPS, SVG, PNG, PDF — всё что нужно для печати и веба. Исходники в Adobe Illustrator/Photoshop." data-en="AI, EPS, SVG, PNG, PDF — everything needed for print and web. Source files in Adobe Illustrator/Photoshop.">AI, EPS, SVG, PNG, PDF — всё что нужно для печати и веба. Исходники в Adobe Illustrator/Photoshop.</div>
+<div class="faq-q" data-ru="Какие форматы?" data-en="What formats?">Какие форматы?</div>
+<div class="faq-a" data-ru="AI, EPS, SVG, PNG, PDF + исходники." data-en="AI, EPS, SVG, PNG, PDF + source files.">AI, EPS, SVG, PNG, PDF + исходники.</div>
 </div>
 </div>
 </section>
 
 <!-- CONTACTS -->
-<section class="contacts" id="contacts">
-<h2 class="section-title" data-ru="Контакты" data-en="Contacts">Контакты</h2>
-<p class="contacts-desc" data-ru="Напишите мне — обсудим ваш проект" data-en="Write to me — let's discuss your project">Напишите мне — обсудим ваш проект</p>
-<div class="contacts-links">
-<a href="https://t.me/vamonny" class="contact-link" target="_blank">Telegram</a>
-<a href="https://vk.com/vamonny" class="contact-link" target="_blank">VK</a>
-<a href="https://kwork.ru/user/vamonny" class="contact-link" target="_blank">Kwork</a>
-<a href="https://t.me/vamonny_lab" class="contact-link" target="_blank" data-ru="Канал" data-en="Channel">Канал</a>
-<a href="mailto:vamonny06@gmail.com" class="contact-link">Email</a>
+<section class="section section-contacts" id="contacts" data-bg="#0a0a0a">
+<h2 class="big-title" data-ru="КОНТАКТЫ" data-en="CONTACTS">КОНТАКТЫ</h2>
+<p class="contacts-sub" data-ru="Напишите — обсудим проект" data-en="Write me — let's discuss">Напишите — обсудим проект</p>
+<div class="contacts-grid">
+<a href="https://t.me/vamonny" target="_blank" class="contact-block">
+<span class="contact-label">Telegram</span>
+<span class="contact-val">@vamonny</span>
+</a>
+<a href="https://vk.com/vamonny" target="_blank" class="contact-block">
+<span class="contact-label">VK</span>
+<span class="contact-val">vk.com/vamonny</span>
+</a>
+<a href="https://kwork.ru/user/vamonny" target="_blank" class="contact-block">
+<span class="contact-label">Kwork</span>
+<span class="contact-val">kwork.ru/user/vamonny</span>
+</a>
+<a href="https://t.me/vamonny_lab" target="_blank" class="contact-block">
+<span class="contact-label" data-ru="Канал" data-en="Channel">Канал</span>
+<span class="contact-val">@vamonny_lab</span>
+</a>
+<a href="mailto:vamonny06@gmail.com" class="contact-block">
+<span class="contact-label">Email</span>
+<span class="contact-val">vamonny06@gmail.com</span>
+</a>
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<!-- SERVICES -->
+<section class="section section-services" id="services" data-bg="#111">
+<h2 class="big-title" data-ru="УСЛУГИ" data-en="SERVICES">УСЛУГИ</h2>
+<div class="services-list">
+<div class="service-row">
+<span class="service-num">01</span>
+<h3 data-ru="Логотипы" data-en="Logos">Логотипы</h3>
+<p data-ru="от 3,000 ₽" data-en="from 3,000 ₽">от 3,000 ₽</p>
+</div>
+<div class="service-row">
+<span class="service-num">02</span>
+<h3 data-ru="Фирменный стиль" data-en="Brand Identity">Фирменный стиль</h3>
+<p data-ru="от 8,000 ₽" data-en="from 8,000 ₽">от 8,000 ₽</p>
+</div>
+<div class="service-row">
+<span class="service-num">03</span>
+<h3 data-ru="Инфографика WB/Ozon" data-en="Marketplace Infographics">Инфографика WB/Ozon</h3>
+<p data-ru="от 1,500 ₽/карточка" data-en="from 1,500 ₽/card">от 1,500 ₽/карточка</p>
+</div>
+<div class="service-row">
+<span class="service-num">04</span>
+<h3 data-ru="3D Анимация" data-en="3D Animation">3D Анимация</h3>
+<p data-ru="от 5,000 ₽" data-en="from 5,000 ₽">от 5,000 ₽</p>
+</div>
+<div class="service-row">
+<span class="service-num">05</span>
+<h3 data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</h3>
+<p data-ru="от 10,000 ₽" data-en="from 10,000 ₽">от 10,000 ₽</p>
+</div>
+<div class="service-row">
+<span class="service-num">06</span>
+<h3 data-ru="Полиграфия" data-en="Print Design">Полиграфия</h3>
+<p data-ru="от 2,000 ₽" data-en="from 2,000 ₽">от 2,000 ₽</p>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-about" id="about" data-bg="#0a0a0a">
+<h2 class="big-title" data-ru="ОБО МНЕ" data-en="ABOUT ME">ОБО МНЕ</h2>
+<div class="about-block">
+<div class="about-text">
+<p data-ru="Кирилл, 18 лет. Графический дизайнер из Нижнего Новгорода. Студент 3 курса IT TOP." data-en="Kirill, 18 y.o. Graphic designer from Nizhny Novgorod. 3rd year IT TOP student.">Кирилл, 18 лет. Графический дизайнер из Нижнего Новгорода. Студент 3 курса IT TOP.</p>
+<p data-ru="Создаю айдентику брендов, инфографику для маркетплейсов, 3D-анимации и веб-дизайн. Работаю в Adobe Photoshop, Illustrator, After Effects, Figma, 3ds Max." data-en="I create brand identity, marketplace infographics, 3D animations and web design. Working in Adobe Photoshop, Illustrator, After Effects, Figma, 3ds Max.">Создаю айдентику брендов, инфографику для маркетплейсов, 3D-анимации и веб-дизайн. Работаю в Adobe Photoshop, Illustrator, After Effects, Figma, 3ds Max.</p>
+</div>
+<div class="about-stats-row">
+<div class="about-stat"><span>20+</span><small data-ru="проектов" data-en="projects">проектов</small></div>
+<div class="about-stat"><span>10+</span><small data-ru="клиентов" data-en="clients">клиентов</small></div>
+<div class="about-stat"><span>2+</span><small data-ru="года" data-en="years">года</small></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-faq" id="faq" data-bg="#0d0d0d">
+<h2 class="big-title">FAQ</h2>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q" data-ru="Сколько стоит логотип?" data-en="How much does a logo cost?">Сколько стоит логотип?</div>
+<div class="faq-a" data-ru="От 3,000 руб. 2-3 концепции + правки до идеала." data-en="From 3,000 RUB. 2-3 concepts + revisions until perfect.">От 3,000 руб. 2-3 концепции + правки до идеала.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" data-ru="Какие сроки?" data-en="What are the deadlines?">Какие сроки?</div>
+<div class="faq-a" data-ru="Логотип 2-3 дня. Фирменный стиль 5-7 дней. Инфографика 1-2 дня." data-en="Logo 2-3 days. Brand identity 5-7 days. Infographics 1-2 days.">Логотип 2-3 дня. Фирменный стиль 5-7 дней. Инфографика 1-2 дня.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" data-ru="Как оплата?" data-en="How does payment work?">Как оплата?</div>
+<div class="faq-a" data-ru="50% предоплата, 50% после. Карта или Kwork." data-en="50% prepayment, 50% after. Bank card or Kwork.">50% предоплата, 50% после. Карта или Kwork.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" data-ru="Сколько правок?" data-en="How many revisions?">Сколько правок?</div>
+<div class="faq-a" data-ru="2-3 раунда включены в стоимость." data-en="2-3 rounds included in the price.">2-3 раунда включены в стоимость.</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section section-contacts" id="contacts" data-bg="#0a0a0a">
+<h2 class="big-title" data-ru="КОНТАКТЫ" data-en="CONTACTS">КОНТАКТЫ</h2>
+<div class="contacts-block">
+<a href="https://t.me/vamonny" target="_blank" class="contact-big">Telegram</a>
+<a href="https://vk.com/vamonny" target="_blank" class="contact-big">VK</a>
+<a href="https://kwork.ru/user/vamonny" target="_blank" class="contact-big">Kwork</a>
+<a href="https://t.me/vamonny_lab" target="_blank" class="contact-big" data-ru="Канал" data-en="Channel">Канал</a>
+<a href="mailto:vamonny06@gmail.com" class="contact-big">Email</a>
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<!-- SERVICES -->
+<section class="section section-services" id="services" data-bg="#111">
+<h2 class="big-title" data-ru="УСЛУГИ" data-en="SERVICES">УСЛУГИ</h2>
+<div class="services-list">
+<div class="service-row"><span class="service-num">01</span><h3 data-ru="Логотипы" data-en="Logos">Логотипы</h3><p data-ru="от 3,000 ₽" data-en="from 3,000 ₽">от 3,000 ₽</p></div>
+<div class="service-row"><span class="service-num">02</span><h3 data-ru="Фирменный стиль" data-en="Brand Identity">Фирменный стиль</h3><p data-ru="от 10,000 ₽" data-en="from 10,000 ₽">от 10,000 ₽</p></div>
+<div class="service-row"><span class="service-num">03</span><h3 data-ru="Инфографика WB/Ozon" data-en="Marketplace Infographics">Инфографика WB/Ozon</h3><p data-ru="от 2,000 ₽" data-en="from 2,000 ₽">от 2,000 ₽</p></div>
+<div class="service-row"><span class="service-num">04</span><h3 data-ru="3D Анимация" data-en="3D Animation">3D Анимация</h3><p data-ru="от 5,000 ₽" data-en="from 5,000 ₽">от 5,000 ₽</p></div>
+<div class="service-row"><span class="service-num">05</span><h3 data-ru="Веб-дизайн" data-en="Web Design">Веб-дизайн</h3><p data-ru="от 8,000 ₽" data-en="from 8,000 ₽">от 8,000 ₽</p></div>
+<div class="service-row"><span class="service-num">06</span><h3 data-ru="Полиграфия" data-en="Print Design">Полиграфия</h3><p data-ru="от 2,000 ₽" data-en="from 2,000 ₽">от 2,000 ₽</p></div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-about" id="about" data-bg="#0a0a0a">
+<div class="about-layout">
+<div class="about-left">
+<h2 class="big-title" data-ru="ОБО МНЕ" data-en="ABOUT ME">ОБО МНЕ</h2>
+</div>
+<div class="about-right">
+<p data-ru="Привет! Я Кирилл — графический дизайнер из Нижнего Новгорода, 18 лет. Учусь на 3 курсе IT TOP и параллельно фрилансю." data-en="Hi! I'm Kirill — a graphic designer from Nizhny Novgorod, 18 y.o. Studying at IT TOP college and freelancing.">Привет! Я Кирилл — графический дизайнер из Нижнего Новгорода, 18 лет. Учусь на 3 курсе IT TOP и параллельно фрилансю.</p>
+<p data-ru="Специализация: визуальная идентичность брендов, инфографика для маркетплейсов, 3D-анимации упаковки." data-en="Specialization: visual brand identity, marketplace infographics, 3D packaging animations.">Специализация: визуальная идентичность брендов, инфографика для маркетплейсов, 3D-анимации упаковки.</p>
+<p data-ru="Стек: Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max." data-en="Stack: Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max.">Стек: Photoshop, Illustrator, After Effects, Premiere Pro, Figma, 3ds Max.</p>
+<div class="about-stats">
+<div class="stat-item"><span class="stat-num">20+</span><span data-ru="проектов" data-en="projects">проектов</span></div>
+<div class="stat-item"><span class="stat-num">10+</span><span data-ru="клиентов" data-en="clients">клиентов</span></div>
+<div class="stat-item"><span class="stat-num">2+</span><span data-ru="года" data-en="years">года</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-faq" id="faq" data-bg="#0d0d0d">
+<h2 class="big-title">FAQ</h2>
+<div class="faq-list">
+<div class="faq-item"><div class="faq-q" data-ru="Сколько стоит логотип?" data-en="How much does a logo cost?">Сколько стоит логотип?</div><div class="faq-a" data-ru="От 3,000 руб. 2-3 концепции + правки до идеала." data-en="From 3,000 RUB. 2-3 concepts + revisions until perfect.">От 3,000 руб. 2-3 концепции + правки до идеала.</div></div>
+<div class="faq-item"><div class="faq-q" data-ru="Какие сроки?" data-en="What are deadlines?">Какие сроки?</div><div class="faq-a" data-ru="Логотип 2-3 дня. Фирменный стиль 5-7 дней. Инфографика 1-2 дня." data-en="Logo 2-3 days. Brand identity 5-7 days. Infographics 1-2 days.">Логотип 2-3 дня. Фирменный стиль 5-7 дней. Инфографика 1-2 дня.</div></div>
+<div class="faq-item"><div class="faq-q" data-ru="Как оплата?" data-en="How does payment work?">Как оплата?</div><div class="faq-a" data-ru="50% предоплата, 50% после. Карта или Kwork." data-en="50% prepayment, 50% after. Bank card or Kwork.">50% предоплата, 50% после. Карта или Kwork.</div></div>
+<div class="faq-item"><div class="faq-q" data-ru="Сколько правок?" data-en="How many revisions?">Сколько правок?</div><div class="faq-a" data-ru="2-3 раунда включены. Обычно хватает." data-en="2-3 rounds included. Usually enough.">2-3 раунда включены. Обычно хватает.</div></div>
+<div class="faq-item"><div class="faq-q" data-ru="Формат файлов?" data-en="File formats?">Формат файлов?</div><div class="faq-a" data-ru="AI, EPS, SVG, PNG, PDF + исходники." data-en="AI, EPS, SVG, PNG, PDF + source files.">AI, EPS, SVG, PNG, PDF + исходники.</div></div>
+</div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section section-contacts" id="contacts" data-bg="#0a0a0a">
+<h2 class="big-title" data-ru="КОНТАКТЫ" data-en="CONTACTS">КОНТАКТЫ</h2>
+<p class="contacts-sub" data-ru="Напишите — обсудим проект" data-en="Write me — let's discuss">Напишите — обсудим проект</p>
+<div class="contacts-grid">
+<a href="https://t.me/vamonny" target="_blank" class="contact-card">Telegram</a>
+<a href="https://vk.com/vamonny" target="_blank" class="contact-card">VK</a>
+<a href="https://kwork.ru/user/vamonny" target="_blank" class="contact-card">Kwork</a>
+<a href="https://t.me/vamonny_lab" target="_blank" class="contact-card" data-ru="Канал" data-en="Channel">Канал</a>
+<a href="mailto:vamonny06@gmail.com" class="contact-card">Email</a>
 </div>
 </section>
 
