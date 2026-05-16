@@ -1,135 +1,80 @@
 ﻿*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:#09090b;color:#fafafa;font-family:'Space Grotesk',sans-serif;overflow-x:hidden;line-height:1.6}
-h1,h2,h3,h4{font-family:'Syne',sans-serif;font-weight:800}
+body{background:#0a0a0a;color:#e5e5e5;font-family:'Space Grotesk',sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Syne',sans-serif;font-weight:700}
 a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
 
 /* HEADER */
-.header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 50px;backdrop-filter:blur(20px);background:rgba(9,9,11,0.7);border-bottom:1px solid rgba(255,255,255,0.05)}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:#b9ff66}
-.nav{display:flex;gap:35px}
-.nav a{font-size:0.9rem;color:#888;transition:color 0.3s;font-weight:500}
-.nav a:hover{color:#b9ff66}
-.lang-btn{background:rgba(185,255,102,0.1);color:#b9ff66;border:1px solid rgba(185,255,102,0.3);padding:8px 16px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;border-radius:8px;transition:all 0.3s}
-.lang-btn:hover{background:#b9ff66;color:#09090b}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 60px;background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1a}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;letter-spacing:-0.02em}
+.nav{display:flex;gap:40px}
+.nav a{font-size:0.88rem;color:#777;transition:color 0.2s}
+.nav a:hover{color:#fff}
+.lang-btn{background:transparent;color:#777;border:1px solid #333;padding:6px 14px;font-size:0.8rem;font-family:'Space Grotesk',sans-serif;font-weight:600;cursor:pointer;border-radius:4px;transition:all 0.2s}
+.lang-btn:hover{color:#fff;border-color:#555}
 
-/* HERO BENTO */
-.hero-bento{padding:120px 50px 60px;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:16px;max-width:1400px;margin:0 auto}
-.bento-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:40px;transition:all 0.4s;position:relative;overflow:hidden}
-.bento-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(185,255,102,0.03),transparent 70%);opacity:0;transition:opacity 0.4s}
-.bento-card:hover::before{opacity:1}
-.bento-card:hover{border-color:rgba(185,255,102,0.15);transform:translateY(-2px)}
-.bento-main{grid-column:1/2;grid-row:1/3}
-.bento-main .bento-tag{font-size:0.8rem;color:#b9ff66;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:20px;display:block}
-.bento-main h1{font-size:clamp(4rem,10vw,7rem);color:#fafafa;line-height:0.9;margin-bottom:20px;background:linear-gradient(135deg,#fafafa 0%,#b9ff66 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.bento-main p{font-size:1.2rem;color:#666;max-width:400px}
-.bento-cta{display:flex;align-items:center;justify-content:center;grid-column:2/3;grid-row:1/2}
-.cta-circle{width:120px;height:120px;border-radius:50%;background:#b9ff66;display:flex;align-items:center;justify-content:center;color:#09090b;font-family:'Syne',sans-serif;font-weight:800;font-size:0.85rem;transition:all 0.4s;box-shadow:0 0 40px rgba(185,255,102,0.2)}
-.cta-circle:hover{transform:scale(1.1);box-shadow:0 0 60px rgba(185,255,102,0.4)}
-.bento-stats{display:flex;gap:30px;align-items:center;justify-content:center;grid-column:3/4;grid-row:1/2}
-.mini-stat{text-align:center}
-.mini-stat span{display:block;font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#b9ff66}
-.mini-stat small{color:#666;font-size:0.8rem}
-.bento-location{grid-column:2/3;grid-row:2/3;display:flex;align-items:center;justify-content:center}
-.bento-location span{color:#888;font-size:0.95rem}
-.bento-stack{grid-column:3/4;grid-row:2/3;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.bento-stack span{background:rgba(185,255,102,0.08);color:#b9ff66;padding:8px 14px;border-radius:8px;font-size:0.85rem;font-weight:600;border:1px solid rgba(185,255,102,0.15)}
-
-/* MARQUEE */
-.marquee{padding:20px 0;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);overflow:hidden;margin:40px 0}
-.marquee-track{display:flex;animation:scroll 30s linear infinite;white-space:nowrap}
-.marquee-track span{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:rgba(185,255,102,0.4);letter-spacing:0.1em}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:0 60px}
+.hero-inner{max-width:700px}
+.hero h1{font-size:clamp(3.5rem,8vw,6rem);color:#fff;letter-spacing:-0.04em;line-height:0.95;margin-bottom:24px}
+.hero-role{font-size:1rem;color:#b9ff66;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:16px;font-weight:600}
+.hero-desc{font-size:1.1rem;color:#777;max-width:500px;margin-bottom:40px;line-height:1.7}
+.hero-btn{display:inline-block;padding:14px 36px;border:1px solid #333;color:#fff;font-size:0.9rem;font-weight:600;border-radius:4px;transition:all 0.2s}
+.hero-btn:hover{border-color:#b9ff66;color:#b9ff66}
 
 /* SECTIONS */
-.section{padding:100px 50px;max-width:1400px;margin:0 auto}
-.section-title{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:50px;background:linear-gradient(135deg,#fafafa,#b9ff66);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.works,.services,.about,.faq,.contacts{padding:120px 60px;max-width:1100px;margin:0 auto}
+h2{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.15em;color:#555;margin-bottom:50px}
 
-/* WORKS BENTO */
-.works-bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:250px;gap:16px}
-.wb-card{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,0.06);transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94)}
-.wb-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
-.wb-card:hover{border-color:rgba(185,255,102,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(185,255,102,0.08)}
-.wb-card:hover img{transform:scale(1.05)}
-.wb-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(9,9,11,0.95) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:25px;opacity:0;transition:opacity 0.4s}
-.wb-card:hover .wb-overlay{opacity:1}
-.wb-overlay h3{font-size:1rem;color:#fafafa;margin-bottom:4px}
-.wb-overlay span{font-size:0.8rem;color:#b9ff66}
-.wb-large{grid-column:span 2;grid-row:span 2}
-.wb-tall{grid-row:span 2}
-.wb-wide{grid-column:span 2}
-.wb-medium{grid-column:span 1;grid-row:span 1}
+/* WORKS LIST */
+.works-list{display:flex;flex-direction:column}
+.work-row{display:grid;grid-template-columns:40px 1fr auto;gap:20px;align-items:center;padding:24px 0;border-bottom:1px solid #1a1a1a;transition:all 0.2s}
+.work-row:first-child{border-top:1px solid #1a1a1a}
+.work-row:hover{padding-left:12px;border-color:#333}
+.work-row:hover .work-name{color:#b9ff66}
+.work-num{font-size:0.8rem;color:#555;font-weight:500}
+.work-name{font-size:1.1rem;color:#e5e5e5;font-weight:500;transition:color 0.2s}
+.work-cat{font-size:0.8rem;color:#555;text-transform:uppercase;letter-spacing:0.08em}
 
-/* SERVICES BENTO */
-.services-bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.sv-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:35px;transition:all 0.4s;position:relative;overflow:hidden}
-.sv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#b9ff66,transparent);transform:scaleX(0);transition:transform 0.4s}
-.sv-card:hover::before{transform:scaleX(1)}
-.sv-card:hover{border-color:rgba(185,255,102,0.2);transform:translateY(-3px)}
-.sv-icon{font-size:1.5rem;color:#b9ff66;margin-bottom:16px}
-.sv-card h3{font-size:1.1rem;margin-bottom:10px;color:#fafafa}
-.sv-card p{font-size:0.9rem;color:#666;margin-bottom:16px;line-height:1.6}
-.sv-price{font-family:'Syne',sans-serif;font-weight:700;color:#b9ff66;font-size:0.95rem}
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 60px}
+.sv-item h3{font-size:1rem;color:#fff;margin-bottom:8px}
+.sv-item p{font-size:0.9rem;color:#666;margin-bottom:12px;line-height:1.6}
+.sv-item span{font-size:0.9rem;color:#b9ff66;font-weight:600}
 
-/* ABOUT BENTO */
-.about-bento{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:16px}
-.ab-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:35px;transition:all 0.4s}
-.ab-card:hover{border-color:rgba(185,255,102,0.15)}
-.ab-main{grid-column:1/2;grid-row:1/3}
-.ab-main p{color:#aaa;font-size:1.05rem;line-height:1.8}
-.ab-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.ab-num{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:#b9ff66;margin-bottom:5px}
-.ab-stat small{color:#666;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em}
-.ab-tools{grid-column:2/5}
-.ab-tools h4{color:#b9ff66;margin-bottom:15px;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.1em}
-.tools-list{display:flex;flex-wrap:wrap;gap:10px}
-.tools-list span{background:rgba(185,255,102,0.06);border:1px solid rgba(185,255,102,0.12);color:#b9ff66;padding:8px 16px;border-radius:10px;font-size:0.85rem;font-weight:500}
+/* ABOUT */
+.about-content p{font-size:1.05rem;color:#999;margin-bottom:16px;max-width:600px;line-height:1.8}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.tools span{font-size:0.8rem;color:#888;padding:6px 14px;border:1px solid #222;border-radius:4px}
 
 /* FAQ */
-.faq-container{max-width:700px}
-.faq-item{border-bottom:1px solid rgba(255,255,255,0.06);padding:22px 0}
-.faq-q{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;cursor:pointer;color:#fafafa;transition:color 0.3s;padding-right:30px;position:relative}
-.faq-q::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);color:#b9ff66;font-size:1.4rem;transition:transform 0.3s}
-.faq-item.active .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+.faq-list{max-width:650px}
+.faq-item{border-bottom:1px solid #1a1a1a;padding:20px 0}
+.faq-q{font-size:1rem;color:#e5e5e5;cursor:pointer;font-weight:500;position:relative;padding-right:24px;transition:color 0.2s}
+.faq-q::after{content:'+';position:absolute;right:0;top:0;color:#555;font-size:1.2rem;transition:transform 0.3s}
+.faq-item.active .faq-q::after{transform:rotate(45deg)}
 .faq-q:hover{color:#b9ff66}
-.faq-a{color:#666;font-size:0.95rem;max-height:0;overflow:hidden;transition:all 0.4s;line-height:1.7}
-.faq-item.active .faq-a{max-height:150px;padding-top:12px}
+.faq-a{font-size:0.9rem;color:#666;max-height:0;overflow:hidden;transition:all 0.3s;line-height:1.7}
+.faq-item.active .faq-a{max-height:120px;padding-top:12px}
 
 /* CONTACTS */
-.contacts-sub{color:#666;font-size:1.1rem;margin-bottom:40px}
-.contacts-bento{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:16px}
-.ct-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:30px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fafafa;transition:all 0.4s}
-.ct-card:hover{border-color:#b9ff66;background:rgba(185,255,102,0.05);color:#b9ff66;transform:translateY(-3px)}
-.ct-main{background:rgba(185,255,102,0.08);border-color:rgba(185,255,102,0.2);flex-direction:column;gap:8px}
-.ct-icon{font-size:1.5rem}
+.contacts-desc{font-size:1rem;color:#666;margin-bottom:30px}
+.contacts-list{display:flex;flex-wrap:wrap;gap:16px}
+.contacts-list a{font-size:0.9rem;color:#e5e5e5;padding:12px 24px;border:1px solid #222;border-radius:4px;transition:all 0.2s;font-weight:500}
+.contacts-list a:hover{border-color:#b9ff66;color:#b9ff66}
+
+/* FOOTER */
+.footer{padding:40px 60px;border-top:1px solid #1a1a1a;text-align:center}
+.footer span{font-size:0.8rem;color:#444}
 
 /* RESPONSIVE */
-@media(max-width:1024px){
-.hero-bento{grid-template-columns:1fr 1fr;padding:100px 30px 40px}
-.bento-main{grid-column:1/3}
-.works-bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
-.services-bento{grid-template-columns:repeat(2,1fr)}
-.about-bento{grid-template-columns:1fr 1fr 1fr}
-.ab-main{grid-column:1/4}
-.ab-tools{grid-column:1/4}
-.contacts-bento{grid-template-columns:repeat(3,1fr)}
-.ct-main{grid-column:1/4}
-}
 @media(max-width:768px){
-.header{padding:15px 20px}
+.header{padding:16px 24px}
 .nav{display:none}
-.hero-bento{grid-template-columns:1fr;padding:90px 20px 30px}
-.bento-main{grid-column:1}
-.bento-main h1{font-size:3.5rem}
-.works-bento{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
-.wb-large,.wb-wide{grid-column:span 2}
-.wb-tall{grid-row:span 1}
-.services-bento{grid-template-columns:1fr}
-.about-bento{grid-template-columns:1fr 1fr 1fr}
-.ab-main{grid-column:1/4}
-.ab-tools{grid-column:1/4}
-.contacts-bento{grid-template-columns:1fr 1fr}
-.ct-main{grid-column:1/3}
-.section{padding:60px 20px}
+.hero{padding:0 24px}
+.hero h1{font-size:3rem}
+.works,.services,.about,.faq,.contacts{padding:80px 24px}
+.services-grid{grid-template-columns:1fr}
+.work-row{grid-template-columns:30px 1fr}
+.work-cat{display:none}
 }
