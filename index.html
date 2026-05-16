@@ -3,230 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кирилл Ковалев — Графический дизайнер</title>
-    <meta name="description" content="Графический дизайнер из Нижнего Новгорода. Логотипы, фирменный стиль, инфографика WB/Ozon, 3D анимация упаковки.">
-    <meta property="og:title" content="Кирилл Ковалев — Графический дизайнер">
-    <meta property="og:description" content="Создаю визуальные решения для бизнеса. Логотипы, брендинг, инфографика, 3D.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vamonny.github.io">
-    <meta property="og:image" content="https://vamonny.github.io/img/logofolio/1.png">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>">
-    <link rel="stylesheet" href="style.css?v=4">
+    <title>KOVALEV — Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="loader"><div class="loader-text">K<span class="accent">.</span></div></div>
-    <div class="cursor"></div>
-    <div class="grain"></div>
+    <div class="noise"></div>
 
+    <!-- NAV -->
     <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">K<span class="accent">.</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#portfolio">Работы</a></li>
-                <li><a href="#process">Процесс</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="nav-cta">Написать</a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
+        <a href="#" class="nav-logo">KOVALEV<span>.</span></a>
+        <div class="nav-links">
+            <a href="#work">WORK</a>
+            <a href="#services">SERVICES</a>
+            <a href="#about">ABOUT</a>
+            <a href="https://t.me/vamonny" target="_blank" class="nav-btn">CONNECT</a>
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-line"></div>
-            <p class="hero-intro">Графический дизайнер • Нижний Новгород</p>
-            <h1 class="hero-title">Создаю<br><span class="accent">визуальные</span><br>решения</h1>
-            <p class="hero-desc">Логотипы, фирменный стиль, инфографика для маркетплейсов и 3D анимация. Минимализм и внимание к деталям.</p>
-            <div class="hero-actions">
-                <a href="#portfolio" class="btn btn-primary"><span>Портфолио</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-                <a href="https://t.me/vamonny" class="btn btn-ghost" target="_blank">Написать в Telegram</a>
+        <div class="hero-bg-text" data-speed="0.3">DESIGN</div>
+        <div class="hero-content" data-speed="0.8">
+            <div class="hero-tag">GRAPHIC DESIGNER / NIZHNY NOVGOROD</div>
+            <h1 class="hero-title">
+                <span class="line">I CREATE</span>
+                <span class="line accent">VISUAL</span>
+                <span class="line">IDENTITIES</span>
+            </h1>
+            <p class="hero-sub">Logos. Branding. Infographics. 3D Animation.</p>
+            <a href="#work" class="hero-cta">
+                <span class="cta-text">VIEW WORK</span>
+                <span class="cta-arrow">&#8595;</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span>LOGOS &#9679;</span><span>BRANDING &#9679;</span><span>INFOGRAPHICS &#9679;</span><span>3D ANIMATION &#9679;</span><span>PACKAGING &#9679;</span><span>IDENTITY &#9679;</span>
+            <span>LOGOS &#9679;</span><span>BRANDING &#9679;</span><span>INFOGRAPHICS &#9679;</span><span>3D ANIMATION &#9679;</span><span>PACKAGING &#9679;</span><span>IDENTITY &#9679;</span>
+        </div>
+    </div>
+
+    <!-- WORK / SLIDER -->
+    <section id="work" class="section work-section">
+        <div class="section-head">
+            <h2>SELECTED<br><span class="accent">WORK</span></h2>
+            <div class="slider-arrows">
+                <button class="arrow-btn" onclick="slideLeft()">&#8592;</button>
+                <button class="arrow-btn" onclick="slideRight()">&#8594;</button>
             </div>
         </div>
-        <div class="hero-blob">
-            <div class="blob"></div>
-            <div class="blob blob-2"></div>
-        </div>
-        <div class="hero-scroll"><span>scroll</span><div class="scroll-line"></div></div>
-    </section>
-
-    <section class="marquee-section">
-        <div class="marquee"><div class="marquee-inner">
-            <span>ЛОГОТИПЫ</span><span>•</span><span>БРЕНДИНГ</span><span>•</span><span>ИНФОГРАФИКА</span><span>•</span><span>3D АНИМАЦИЯ</span><span>•</span><span>WILDBERRIES</span><span>•</span><span>OZON</span><span>•</span>
-            <span>ЛОГОТИПЫ</span><span>•</span><span>БРЕНДИНГ</span><span>•</span><span>ИНФОГРАФИКА</span><span>•</span><span>3D АНИМАЦИЯ</span><span>•</span><span>WILDBERRIES</span><span>•</span><span>OZON</span><span>•</span>
-        </div></div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header"><span class="section-num">01</span><h2>Обо мне</h2></div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p class="lead">Хороший дизайн — это не украшение, а инструмент. Каждый проект начинается с понимания задачи бизнеса.</p>
-                    <p>Работаю с компаниями и стартапами, создавая визуальную идентичность, которая запоминается и конвертирует. Мой стиль — чистый минимализм с вниманием к каждому пикселю.</p>
-                </div>
-                <div class="about-details">
-                    <div class="detail-card"><span class="detail-num">2+</span><span class="detail-text">года в дизайне</span></div>
-                    <div class="detail-card"><span class="detail-num">20+</span><span class="detail-text">завершённых проектов</span></div>
-                    <div class="detail-card"><span class="detail-num">15+</span><span class="detail-text">довольных клиентов</span></div>
-                    <div class="detail-card highlight"><span class="detail-num">∞</span><span class="detail-text">стремление к идеалу</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section">
-        <div class="container">
-            <div class="section-header"><span class="section-num">02</span><h2>Услуги</h2></div>
-            <div class="services-list">
-                <div class="service-row"><div class="service-number">01</div><div class="service-info"><h3>Логотипы</h3><p>Уникальные логотипы для бизнеса и личных брендов. От концепции до финальных файлов во всех форматах.</p></div><div class="service-price">от 3 000 ₽</div></div>
-                <div class="service-row"><div class="service-number">02</div><div class="service-info"><h3>Фирменный стиль</h3><p>Полная визуальная идентичность: логотип, палитра, типографика, носители, брендбук.</p></div><div class="service-price">от 10 000 ₽</div></div>
-                <div class="service-row"><div class="service-number">03</div><div class="service-info"><h3>Инфографика WB / Ozon</h3><p>Карточки товаров, которые продают. Визуализация характеристик и преимуществ продукта.</p></div><div class="service-price">от 2 000 ₽</div></div>
-                <div class="service-row"><div class="service-number">04</div><div class="service-info"><h3>3D анимация упаковки</h3><p>Реалистичная визуализация и анимация продукта в Blender для рекламы и маркетплейсов.</p></div><div class="service-price">от 5 000 ₽</div></div>
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <div class="slide-card"><div class="slide-img grad-1"></div><div class="slide-info"><span class="slide-tag">BRANDING</span><h3>PAFOS</h3><p>Strip club identity</p></div></div>
+                <div class="slide-card"><div class="slide-img grad-2"></div><div class="slide-info"><span class="slide-tag">LOGOS</span><h3>LOGOFOLIO</h3><p>9 unique logos</p></div></div>
+                <div class="slide-card"><div class="slide-img grad-3"></div><div class="slide-info"><span class="slide-tag">INFOGRAPHIC</span><h3>WB CARDS</h3><p>Marketplace design</p></div></div>
+                <div class="slide-card"><div class="slide-img grad-4"></div><div class="slide-info"><span class="slide-tag">3D</span><h3>PACKAGING</h3><p>3D animation</p></div></div>
+                <div class="slide-card"><div class="slide-img grad-5"></div><div class="slide-info"><span class="slide-tag">BRANDING</span><h3>APEXBANK</h3><p>Bank identity</p></div></div>
+                <div class="slide-card"><div class="slide-img grad-6"></div><div class="slide-info"><span class="slide-tag">BRANDING</span><h3>FRAME</h3><p>Gallery branding</p></div></div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="section">
-        <div class="container">
-            <div class="section-header"><span class="section-num">03</span><h2>Работы</h2></div>
-            <div class="portfolio-grid">
-                <a href="projects/logofolio.html" class="work-card large">
-                    <div class="work-placeholder grad-1"><span class="work-placeholder-title">Логофолио</span><span class="work-placeholder-sub">9 логотипов • Разные стили</span></div>
-                    <div class="work-info"><span class="work-tag">Логотипы</span><h3>Логофолио</h3><p>Смотреть проект →</p></div>
-                </a>
-                <a href="projects/pafos.html" class="work-card">
-                    <div class="work-placeholder grad-2"><span class="work-placeholder-title">Пафос</span><span class="work-placeholder-sub">Брендинг • Фирменный стиль</span></div>
-                    <div class="work-info"><span class="work-tag">Брендинг</span><h3>Пафос</h3><p>Смотреть проект →</p></div>
-                </a>
-                <a href="projects/infographic.html" class="work-card">
-                    <div class="work-placeholder grad-3"><span class="work-placeholder-title">Инфографика WB</span><span class="work-placeholder-sub">Dyson • iPhone • Карточки</span></div>
-                    <div class="work-info"><span class="work-tag">Инфографика</span><h3>Карточки WB</h3><p>Смотреть проект →</p></div>
-                </a>
-                <a href="projects/3d.html" class="work-card large">
-                    <div class="work-placeholder grad-4"><span class="play-icon">▶</span><span class="work-placeholder-title">3D Анимация</span><span class="work-placeholder-sub">Упаковка • Blender • Рендер</span></div>
-                    <div class="work-info"><span class="work-tag">3D</span><h3>Анимация упаковки</h3><p>Смотреть проект →</p></div>
-                </a>
-                <a href="projects/apexbank.html" class="work-card">
-                    <div class="work-placeholder grad-5"><span class="work-placeholder-title">ApexBank</span><span class="work-placeholder-sub">Банк • Фирменный стиль</span></div>
-                    <div class="work-info"><span class="work-tag">Брендинг</span><h3>ApexBank</h3><p>Смотреть проект →</p></div>
-                </a>
-                <a href="projects/frame.html" class="work-card">
-                    <div class="work-placeholder grad-6"><span class="work-placeholder-title">Frame</span><span class="work-placeholder-sub">Галерея • Минимализм</span></div>
-                    <div class="work-info"><span class="work-tag">Брендинг</span><h3>Frame</h3><p>Смотреть проект →</p></div>
-                </a>
+    <!-- MARQUEE 2 -->
+    <div class="marquee-strip reverse">
+        <div class="marquee-track">
+            <span>WILDBERRIES &#9679;</span><span>OZON &#9679;</span><span>PHOTOSHOP &#9679;</span><span>ILLUSTRATOR &#9679;</span><span>BLENDER &#9679;</span><span>FIGMA &#9679;</span><span>AFTER EFFECTS &#9679;</span>
+            <span>WILDBERRIES &#9679;</span><span>OZON &#9679;</span><span>PHOTOSHOP &#9679;</span><span>ILLUSTRATOR &#9679;</span><span>BLENDER &#9679;</span><span>FIGMA &#9679;</span><span>AFTER EFFECTS &#9679;</span>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" class="section services-section">
+        <h2>WHAT I<br><span class="accent">DO</span></h2>
+        <div class="services-grid">
+            <div class="service-block"><span class="service-num">01</span><h3>LOGOS</h3><p>Unique brand marks from concept to final files</p><span class="service-price">FROM 3K &#8381;</span></div>
+            <div class="service-block"><span class="service-num">02</span><h3>BRANDING</h3><p>Full visual identity: logo, colors, typography, brandbook</p><span class="service-price">FROM 10K &#8381;</span></div>
+            <div class="service-block"><span class="service-num">03</span><h3>INFOGRAPHICS</h3><p>Product cards for WB/Ozon that convert</p><span class="service-price">FROM 2K &#8381;</span></div>
+            <div class="service-block"><span class="service-num">04</span><h3>3D ANIMATION</h3><p>Realistic packaging visualization in Blender</p><span class="service-price">FROM 5K &#8381;</span></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section">
+        <div class="about-grid">
+            <div class="about-left">
+                <h2>ABOUT<br><span class="accent">ME</span></h2>
+                <p>Graphic designer based in Nizhny Novgorod. I specialize in minimalist, bold visual solutions that make brands stand out.</p>
+                <p>2+ years of experience. 20+ completed projects. Clean lines, sharp details, no bullshit.</p>
+            </div>
+            <div class="about-right">
+                <div class="stat-block"><span class="stat-big">20+</span><span>PROJECTS</span></div>
+                <div class="stat-block"><span class="stat-big">15+</span><span>CLIENTS</span></div>
+                <div class="stat-block accent-bg"><span class="stat-big">&#8734;</span><span>AMBITION</span></div>
             </div>
         </div>
     </section>
 
-    <section id="process" class="section">
-        <div class="container">
-            <div class="section-header"><span class="section-num">04</span><h2>Как я работаю</h2></div>
-            <div class="process-grid">
-                <div class="process-step"><span class="process-num">01</span><h3>Бриф</h3><p>Обсуждаем задачу, целевую аудиторию, конкурентов и ваши пожелания.</p></div>
-                <div class="process-step"><span class="process-num">02</span><h3>Концепции</h3><p>Создаю 2-5 вариантов. Вы выбираете направление, которое нравится.</p></div>
-                <div class="process-step"><span class="process-num">03</span><h3>Доработка</h3><p>Дорабатываю выбранный вариант. 2-3 раунда правок включены.</p></div>
-                <div class="process-step"><span class="process-num">04</span><h3>Сдача</h3><p>Передаю все файлы в нужных форматах. Вы получаете готовый продукт.</p></div>
-            </div>
+    <!-- FAQ -->
+    <section class="section faq-section">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+            <details class="faq-item"><summary>TIMELINE?<span class="faq-plus">+</span></summary><p>Logos: 3-5 days. Branding: 2-3 weeks. Infographics: 2-3 days. 3D: 5-7 days.</p></details>
+            <details class="faq-item"><summary>REVISIONS?<span class="faq-plus">+</span></summary><p>2-3 rounds included. Usually enough to nail it.</p></details>
+            <details class="faq-item"><summary>FILE FORMATS?<span class="faq-plus">+</span></summary><p>AI, SVG, PNG, JPG, PDF. Print: CMYK. Web: RGB. Source files included.</p></details>
+            <details class="faq-item"><summary>PAYMENT?<span class="faq-plus">+</span></summary><p>50% upfront for new clients. Bank transfer. Full payment on delivery.</p></details>
+            <details class="faq-item"><summary>REMOTE?<span class="faq-plus">+</span></summary><p>Yes. I work with clients from any city. Communication via Telegram.</p></details>
         </div>
     </section>
 
-    <section id="faq" class="section">
-        <div class="container">
-            <div class="section-header"><span class="section-num">05</span><h2>Вопросы</h2></div>
-            <div class="faq-list">
-                <details class="faq-item"><summary>Какие сроки выполнения?</summary><p>Логотип — 3-5 дней. Фирменный стиль — 2-3 недели. Инфографика — 2-3 дня. 3D анимация — 5-7 дней. Срочные заказы обсуждаются отдельно.</p></details>
-                <details class="faq-item"><summary>Сколько правок включено?</summary><p>2-3 раунда правок включены в стоимость. Обычно этого достаточно. Дополнительные правки — по договорённости.</p></details>
-                <details class="faq-item"><summary>В каких форматах получу файлы?</summary><p>AI, SVG, PNG, JPG, PDF — все основные форматы. Для печати — CMYK, для веба — RGB. Исходники в Adobe Illustrator.</p></details>
-                <details class="faq-item"><summary>Нужна ли предоплата?</summary><p>Для новых клиентов — 50% предоплата. Для постоянных — по договорённости. Оплата переводом на карту.</p></details>
-                <details class="faq-item"><summary>Работаете с регионами?</summary><p>Да, работаю удалённо с клиентами из любого города. Связь через Telegram, WhatsApp или email.</p></details>
-            </div>
+    <!-- CTA -->
+    <section class="section cta-section">
+        <h2>GOT A<br>PROJECT<span class="accent">?</span></h2>
+        <p>Let's make something brutal.</p>
+        <a href="https://t.me/vamonny" target="_blank" class="cta-big">
+            <span>LET'S TALK</span>
+        </a>
+        <div class="socials">
+            <a href="https://t.me/vamonny" target="_blank">TG</a>
+            <a href="https://t.me/vamonny_lab" target="_blank">CHANNEL</a>
+            <a href="https://vk.com/vamonny" target="_blank">VK</a>
+            <a href="https://kwork.ru/user/vamonny" target="_blank">KWORK</a>
+            <a href="mailto:vamonny06@gmail.com">EMAIL</a>
         </div>
     </section>
 
-    <section id="calculator" class="section">
-        <div class="container">
-            <div class="section-header"><span class="section-num">06</span><h2>Калькулятор</h2></div>
-            <div class="calc-wrapper">
-                <div class="calc-form">
-                    <div class="calc-group">
-                        <label class="calc-label">Услуга</label>
-                        <div class="calc-options" id="serviceOptions">
-                            <button class="calc-option active" data-price="3000" data-service="logo">Логотип</button>
-                            <button class="calc-option" data-price="10000" data-service="brand">Фирменный стиль</button>
-                            <button class="calc-option" data-price="2000" data-service="infographic">Инфографика</button>
-                            <button class="calc-option" data-price="5000" data-service="3d">3D анимация</button>
-                        </div>
-                    </div>
-                    <div class="calc-group">
-                        <label class="calc-label">Количество</label>
-                        <div class="calc-counter">
-                            <button class="calc-minus">−</button>
-                            <span class="calc-count" id="calcCount">1</span>
-                            <button class="calc-plus">+</button>
-                        </div>
-                    </div>
-                    <div class="calc-group">
-                        <label class="calc-label">Срочность</label>
-                        <div class="calc-options" id="urgencyOptions">
-                            <button class="calc-option active" data-mult="1">Обычная</button>
-                            <button class="calc-option" data-mult="1.5">Срочная ×1.5</button>
-                        </div>
-                    </div>
-                    <div class="calc-group">
-                        <label class="calc-label">Дополнительно</label>
-                        <div class="calc-extras">
-                            <label class="calc-check"><input type="checkbox" data-add="2000" id="extraSource"><span>Исходники (AI/PSD)</span><span class="calc-check-price">+2 000 ₽</span></label>
-                            <label class="calc-check"><input type="checkbox" data-add="5000" id="extraBrandbook"><span>Брендбук</span><span class="calc-check-price">+5 000 ₽</span></label>
-                            <label class="calc-check"><input type="checkbox" data-add="1000" id="extraSocial"><span>Адаптация для соцсетей</span><span class="calc-check-price">+1 000 ₽</span></label>
-                        </div>
-                    </div>
-                </div>
-                <div class="calc-result">
-                    <div class="calc-result-inner">
-                        <div class="calc-total-label">Итого</div>
-                        <div class="calc-total" id="calcTotal">3 000 ₽</div>
-                        <div class="calc-note">Точная стоимость после обсуждения ТЗ</div>
-                        <a href="https://t.me/vamonny" class="btn btn-primary calc-btn" target="_blank"><span>Заказать в Telegram</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Есть проект?<br><span class="accent">Давайте обсудим.</span></h2>
-                <p>Напишите мне — отвечу в течение часа.</p>
-                <div class="contact-buttons">
-                    <a href="https://t.me/vamonny" class="btn btn-primary" target="_blank"><span>Telegram</span></a>
-                    
-                    <a href="mailto:vamonny06@gmail.com" class="btn btn-ghost">Email</a>
-                </div>
-                <div class="contact-socials">
-                    <a href="https://t.me/vamonny_lab" target="_blank">TG канал</a>
-                    <a href="https://vk.com/vamonny" target="_blank">ВКонтакте</a>
-                    <a href="https://kwork.ru/user/vamonny" target="_blank">Kwork</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-grid">
-            <span class="nav-logo">K<span class="accent">.</span></span>
-            <p>© 2026 Кирилл Ковалев</p>
-            <div class="footer-links">
-                <a href="https://t.me/vamonny" target="_blank">Telegram</a>
-                <a href="https://vk.com/vamonny" target="_blank">VK</a>
-                <a href="https://kwork.ru/user/vamonny" target="_blank">Kwork</a>
-                <a href="mailto:vamonny06@gmail.com">Email</a>
-            </div>
-        </div>
+        <span>KOVALEV<span class="accent">.</span> 2026</span>
     </footer>
 
     <script src="script.js"></script>
