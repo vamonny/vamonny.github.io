@@ -35,21 +35,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
 // Language switch
-const translations = {
-    '.hero-tag': {ru:'ГРАФИЧЕСКИЙ ДИЗАЙНЕР / НИЖНИЙ НОВГОРОД', en:'GRAPHIC DESIGNER / NIZHNY NOVGOROD'},
-    '.hero-title .line:nth-child(1)': {ru:'СОЗДАЮ', en:'I CREATE'},
-    '.hero-title .line.accent': {ru:'ВИЗУАЛЬНЫЕ', en:'VISUAL'},
-    '.hero-title .line:nth-child(3)': {ru:'РЕШЕНИЯ', en:'IDENTITIES'},
-    '.hero-sub': {ru:'Логотипы. Фирменный стиль. Инфографика. 3D анимация.', en:'Logos. Branding. Infographics. 3D Animation.'},
-    '.cta-text': {ru:'СМОТРЕТЬ РАБОТЫ', en:'VIEW WORK'},
-};
-let currentLang = 'ru';
+let currentLang = 'en';
 function toggleLang() {
-    currentLang = currentLang === 'ru' ? 'en' : 'ru';
-    document.getElementById('langBtn').textContent = currentLang === 'ru' ? 'EN' : 'RU';
-    for (const [sel, texts] of Object.entries(translations)) {
-        const el = document.querySelector(sel);
-        if (el) el.textContent = texts[currentLang];
-    }
+    currentLang = currentLang === 'en' ? 'ru' : 'en';
+    document.getElementById('langBtn').textContent = currentLang === 'en' ? 'RU' : 'EN';
+    document.querySelectorAll('[data-ru][data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + currentLang);
+    });
 }
