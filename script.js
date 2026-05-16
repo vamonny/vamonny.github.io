@@ -1,1 +1,1 @@
-﻿
+﻿let lang='ru';document.getElementById('langSwitch').addEventListener('click',function(){lang=lang==='ru'?'en':'ru';this.textContent=lang==='ru'?'EN':'RU';document.querySelectorAll('[data-ru]').forEach(el=>{el.textContent=el.getAttribute('data-'+lang)})});
